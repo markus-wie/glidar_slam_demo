@@ -1,0 +1,53 @@
+{
+  "name": "linux",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": "../..",
+    "args": {
+      "ROS_DISTRO": "kilted",
+      "USERNAME": "ros"
+    }
+  },
+  "containerUser": "ros",
+  "remoteUser": "ros",
+  "postAttachCommand": "bash .devcontainer/post-attach.sh",
+  "containerEnv": {
+    "NVIDIA_VISIBLE_DEVICES": "all",
+    "NVIDIA_DRIVER_CAPABILITIES": "all",
+    "CCACHE_CONFIGPATH": "${containerWorkspaceFolder}/ccache.conf",
+    "WORKSPACE_ROOT": "${containerWorkspaceFolder}",
+    "ROS_AUTOMATIC_DISCOVERY_RANGE": "LOCALHOST",
+    "DEBUGINFOD_URLS": "",
+    "XAUTHORITY": "/home/dev/.Xauthority",
+    "QT_X11_NO_MITSHM": "0"
+  },
+  "remoteEnv": {
+    "DISPLAY": "${localEnv:DISPLAY}",
+    "WAYLAND_DISPLAY": "${localEnv:WAYLAND_DISPLAY}",
+    "XDG_RUNTIME_DIR": "/tmp/runtime-dir"
+  },
+  "privileged": true,
+  "runArgs": [
+    "--network=host",
+    "--ipc=host",
+    "--volume=/tmp/.X11-unix:/tmp/.X11-unix",
+    "--volume=${localEnv:HOME}/.Xauthority:/home/dev/.Xauthority:ro"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools-extension-pack",
+        "ms-python.python",
+        "ms-python.black-formatter",
+        "ranch-hand-robotics.rde-ros-2",
+        "ms-azuretools.vscode-docker",
+        "mhutchie.git-graph",
+        "donjayamanne.githistory",
+        "actboy168.tasks",
+        "rioj7.command-variable"
+      ]
+    }
+  }
+}
