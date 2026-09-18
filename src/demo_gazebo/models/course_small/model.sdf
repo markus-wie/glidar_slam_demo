@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.12">
+    <model name="course_small">
+        <link name="marking-lines">
+            <visual name="marking-lines_visual">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/Small-Track.stl</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+    </model>
+</sdf>

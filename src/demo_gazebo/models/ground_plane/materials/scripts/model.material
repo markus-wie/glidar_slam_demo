@@ -1,0 +1,14 @@
+material Custom/RepeatingFloor
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture Cobbles_Albedo.png
+        scale 1.0 1.0
+      }
+    }
+  }
+}

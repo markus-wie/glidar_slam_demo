@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_geometries>
+    <geometry id="ground_plane_geometry" name="ground_plane">
+      <mesh>
+        <source id="ground_plane_positions">
+          <float_array id="ground_plane_positions_array" count="12">-50 -50 0 50 -50 0 50 50 0 -50 50 0</float_array>
+          <technique_common>
+            <accessor source="#ground_plane_positions_array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="ground_plane_normals">
+          <float_array id="ground_plane_normals_array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#ground_plane_normals_array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="ground_plane_uvs">
+          <float_array id="ground_plane_uvs_array" count="8">0 0 20 0 20 20 0 20</float_array>
+          <technique_common>
+            <accessor source="#ground_plane_uvs_array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="ground_plane_vertices">
+          <input semantic="POSITION" source="#ground_plane_positions"/>
+        </vertices>
+        <triangles count="2">
+          <input semantic="VERTEX" source="#ground_plane_vertices" offset="0"/>
+          <input semantic="NORMAL" source="#ground_plane_normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#ground_plane_uvs" offset="2" set="0"/>
+          <p>0 0 0 1 0 1 2 0 2 0 0 0 2 0 2 3 0 3</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="ground_plane_scene">
+      <node id="ground_plane_node" name="ground_plane">
+        <instance_geometry url="#ground_plane_geometry"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#ground_plane_scene"/>
+  </scene>
+</COLLADA>

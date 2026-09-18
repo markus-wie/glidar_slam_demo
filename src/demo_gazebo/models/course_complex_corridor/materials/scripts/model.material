@@ -1,0 +1,14 @@
+material Custom/RepeatingFloor
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture Slatetiles.png
+        scale 1.0 1.0
+      }
+    }
+  }
+}

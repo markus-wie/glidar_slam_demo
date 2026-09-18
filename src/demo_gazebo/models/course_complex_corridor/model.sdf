@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.12">
+    <model name="course_complex_corridor">
+        <link name="track">
+            <visual name="track_visual">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/Complex-Corridor-Track.stl</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+        <link name="walls">
+            <visual name="walls_visual">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/Complex-Corridor-Walls.dae</uri>
+                    </mesh>
+                </geometry>
+                <material>
+                    <diffuse>1.0 1.0 1.0</diffuse>
+                    <specular>1.0 1.0 1.0</specular>
+                    <pbr>
+                        <metal>
+                            <albedo_map>materials/textures/Slatetiles.png</albedo_map>
+                        </metal>
+                    </pbr>
+                </material>
+
+            </visual>
+        </link>
+    </model>
+</sdf>

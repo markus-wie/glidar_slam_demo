@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.12">
+    <model name="course_short_complex_corridor">
+        <link name="track">
+            <visual name="track_visual">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/Short-Complex-Corridor-Track.stl</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+        <link name="walls">
+            <visual name="walls_visual">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/Short-Complex-Corridor-Walls.dae</uri>
+                    </mesh>
+                </geometry>
+                <material>
+                    <diffuse>1.0 1.0 1.0</diffuse>
+                    <specular>1.0 1.0 1.0</specular>
+                    <pbr>
+                        <metal>
+                            <albedo_map>materials/textures/Slatetiles.png</albedo_map>
+                            <!-- <albedo_map>materials/textures/Cobbles_Albedo.png</albedo_map>
+                            <normal_map>materials/textures/Cobbles_NormalMap.png</normal_map>
+                            <ambient_occlusion_map>materials/textures/Cobbles_AmbientOcclusionMap.png</ambient_occlusion_map> -->
+                        </metal>
+                    </pbr>
+                </material>
+
+            </visual>
+        </link>
+    </model>
+</sdf>
