@@ -1,0 +1,21 @@
+# Specific directories
+/build
+/install
+/log
+/bags
+.cache
+.ccache
+/rosdep
+/core
+
+# vscode
+/.vscode/c_cpp_properties.json
+/.vscode/*.db*
+
+# misc
+*.pyc
+**/__pycache__
+**/*.DS_Store
+**/*:Zone.Identifier
+**/*.bag
+**/.venv
