@@ -70,13 +70,11 @@ def generate_launch_description():
     )
 
     bringup_dir = get_package_share_directory("demo_bringup")
+    glidar_slam_ros_dir = get_package_share_directory("glidar_slam_ros")
     demo_gazebo_dir = get_package_share_directory("demo_gazebo")
     image_processing_dir = get_package_share_directory("image_processing")
     center_point_detection_dir = get_package_share_directory("center_point_detection")
     trajectory_planner_dir = get_package_share_directory("trajectory_planner")
-
-    # Launch files
-    sim_launch_file = os.path.join(demo_gazebo_dir, "launch", "demo_gazebo.launch.py")
 
     use_sim_time = LaunchConfiguration("use_sim_time", default="False")
     car_type = LaunchConfiguration("car_type")
@@ -127,6 +125,7 @@ def generate_launch_description():
     )
 
     # Launch files
+    sim_launch_file = os.path.join(demo_gazebo_dir, "launch", "demo_gazebo.launch.py")
     lidar_slam_launch_file = os.path.join(bringup_dir, "launch", "lidar_slam_launch.py")
     control_launch_file = os.path.join(bringup_dir, "launch", "control_launch.py")
     navigation_launch_file = os.path.join(bringup_dir, "launch", "nav2_launch.py")
@@ -134,6 +133,9 @@ def generate_launch_description():
         bringup_dir, "launch", "nav2_lidar_amcl_launch.py"
     )
     ekf_launch_file = os.path.join(bringup_dir, "launch", "ekf_launch.py")
+    glidar_slam_launch_file = os.path.join(
+        glidar_slam_ros_dir, "launch", "glidar_slam.launch.py"
+    )
     rtabmap_launch_file = os.path.join(bringup_dir, "launch", "rtabmap_launch.py")
     ground_localization_launch_file = os.path.join(
         bringup_dir, "launch", "ground_localization_launch.py"
@@ -189,22 +191,21 @@ def generate_launch_description():
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(sim_launch_file),
             ),
-            # OpaqueFunction(function=_start_robot_description),
             delayed_gui_launch,
-            # delayed_rtabmap_launch,
             twist_mux_node,
-            # IncludeLaunchDescription(
-            #     PythonLaunchDescriptionSource(sim_launch_file),
-            # ),
-            # IncludeLaunchDescription(
-            #     PythonLaunchDescriptionSource(lidar_slam_launch_file),
-            # ),
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(control_launch_file),
             ),
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(ekf_launch_file),
             ),
+            IncludeLaunchDescription(
+                PythonLaunchDescriptionSource(glidar_slam_launch_file),
+            ),
+            # delayed_rtabmap_launch,
+            # IncludeLaunchDescription(
+            #     PythonLaunchDescriptionSource(lidar_slam_launch_file),
+            # ),
             # IncludeLaunchDescription(
             #     PythonLaunchDescriptionSource(ground_localization_launch_file),
             # ),
@@ -224,6 +225,5 @@ def generate_launch_description():
             #         "map": "/workspaces/glidar_slam_demo/glidar_map2.yaml",
             #     }.items(),
             # ),
-            # ExecuteProcess(cmd=["python3", image_cropper_node_path], output="screen"),
         ]
     )
