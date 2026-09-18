@@ -1,0 +1,237 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    // === STATUSBAR TASKS ===
+    {
+      "label": "ROS: Build Package",
+      "detail": "Builds All or a Single package in ROS Workspace.",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-i",
+        "-c",
+        "${workspaceFolder}/scripts/build.bash ${input:buildMode} ${input:package}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "options": {
+        "statusbar": {
+          "hide": false,
+          "label": "🔨 Build",
+        }
+      },
+      "problemMatcher": "$gcc",
+      "presentation": {
+        "panel": "dedicated",
+        "reveal": "always",
+        "clear": true
+      }
+    },
+    {
+      "label": "ROS: Start Launch-File",
+      "detail": "Launch with modular architecture: Platform + Module.",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-i",
+        "-c",
+        "${workspaceFolder}/scripts/launch.bash ${input:carType} ${input:courseType}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "options": {
+        "statusbar": {
+          "hide": false,
+          "label": "🚀 Launch",
+        }
+      },
+      "problemMatcher": "$gcc",
+      "presentation": {
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "ROS: Test Package",
+      "detail": "Test All or a Single package in ROS Workspace.",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-i",
+        "-c",
+        "${workspaceFolder}/scripts/test.bash ${input:package}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "options": {
+        "statusbar": {
+          "hide": false,
+          "label": "🧪 Test",
+        }
+      },
+      "problemMatcher": "$gcc",
+      "presentation": {
+        "panel": "dedicated",
+        "reveal": "always",
+        "clear": true
+      }
+    },
+    {
+      "label": "ROS: Format Package",
+      "detail": "Format C/C++ code in a package using clang-format.",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-i",
+        "-c",
+        "${workspaceFolder}/scripts/format.bash ${input:package}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "options": {
+        "statusbar": {
+          "hide": false,
+          "label": "🧹 Format",
+        }
+      },
+      "problemMatcher": "$gcc",
+      "presentation": {
+        "panel": "dedicated",
+        "reveal": "always",
+        "clear": true
+      }
+    },
+    {
+      "label": "ROS: Install ROS dependencies",
+      "detail": "Download all repositories required for the workspace.",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-i",
+        "-c",
+        "${workspaceFolder}/scripts/install-dependencies.bash"
+      ],
+      "problemMatcher": [],
+      "group": "build",
+      "options": {
+        "statusbar": {
+          "hide": false,
+          "label": "🗃️ Install",
+        }
+      },
+      "presentation": {
+        "panel": "dedicated"
+      }
+    },
+    // === TESTING TASKS ===
+    {
+      "label": "ROS: Run Unit-Test",
+      "detail": "Runs a unit test.",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-i",
+        "-c",
+        "${workspaceFolder}/build/${input:package}/${input:test}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "options": {
+        "statusbar": {
+          "hide": true
+        }
+      },
+      "problemMatcher": "$gcc",
+      "presentation": {
+        "panel": "dedicated"
+      }
+    },
+    // === HARDWARE TASKS ===
+    {
+      "label": "Calibrate Motor Controller",
+      "detail": "Calibrates the motor controller.",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-i",
+        "-c",
+        "${workspaceFolder}/scripts/calibrate_motor_controller.bash"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "options": {
+        "statusbar": {
+          "hide": true
+        }
+      },
+      "presentation": {
+        "panel": "dedicated"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "package",
+      "type": "command",
+      "command": "extension.commandvariable.file.pickFile",
+      "args": {
+        "include": "{src/**/package.xml,vendor/**/package.xml}",
+        "exclude": "**/{build,lib,install,log}/**",
+        "description": "Choose a Package || Empty will build all",
+        "display": "fileName",
+        "showDirs": true,
+        "addEmpty": true
+      }
+    },
+    {
+      "id": "buildMode",
+      "type": "pickString",
+      "description": "Build mode",
+      "options": [
+        "Debug",
+        "Release"
+      ],
+      "default": "Release"
+    },
+    {
+      "id": "test",
+      "type": "promptString",
+      "description": "Test Name",
+      "default": ""
+    },
+    {
+      "id": "carType",
+      "type": "pickString",
+      "description": "Car type",
+      "options": [
+        "car_damped",
+        "car_rigid",
+        "car_simple"
+      ],
+      "default": "car_damped"
+    },
+    {
+      "id": "courseType",
+      "type": "pickString",
+      "description": "Course type",
+      "options": [
+        "course_complex_corridor",
+        "course_long",
+        "course_small",
+        "course_short_complex_corridor"
+      ],
+      "default": "course_short_complex_corridor"
+    }
+  ]
+}
