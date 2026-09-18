@@ -1,0 +1,4 @@
+[submodule "glidar_slam"]
+	path = src/glidar_slam
+	url = https://github.com/markus-wie/glidar_slam.git
+	branch = main
