@@ -1,0 +1,2072 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.11">
+  <model name="assembly_suspension">
+    <link name="base_link">
+      <inertial>
+        <pose>0.20756389603031497 1.0692112825278478e-06 0.0016168026013966292 0.0 -0.0 0.0</pose>
+        <mass>1.0768759236001362</mass>
+        <inertia>
+          <ixx>0.0016085900830970206</ixx>
+          <ixy>-5.786644030700024e-09</ixy>
+          <ixz>-7.715817773450455e-07</ixz>
+          <iyy>0.010084738201741564</iyy>
+          <iyz>1.8465675472536808e-09</iyz>
+          <izz>0.011690950228739824</izz>
+        </inertia>
+      </inertial>
+      <visual name="base_link_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/baseplate_v2_1/baseplate_v2_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="base_link_collision">
+        <pose>0.2 0 0.01 0.0 0.0 0.0</pose>
+        <geometry>
+          <box>
+            <size>0.3 0.15 0.02</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="control_arm_front_right_rg_1">
+      <inertial>
+        <pose>0.37812100556109596 -0.06186993493811003 0.062497108348717335 0.0 -0.0 0.0</pose>
+        <mass>0.01031774089659783</mass>
+        <inertia>
+          <ixx>5.689664786816395e-06</ixx>
+          <ixy>9.885727100572735e-07</ixy>
+          <ixz>1.5822245106781414e-07</ixz>
+          <iyy>9.535365202641317e-07</iyy>
+          <iyz>-8.665531519807916e-07</iyz>
+          <izz>6.229080056528854e-06</izz>
+        </inertia>
+      </inertial>
+      <visual name="control_arm_front_right_rg_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/control_arm_front_right_rg_1/control_arm_front_right_rg_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="control_arm_front_left_rg_1">
+      <inertial>
+        <pose>0.37812100641224505 0.06186993631185958 0.062497109576163175 0.0 -0.0 0.0</pose>
+        <mass>0.010317742029137811</mass>
+        <inertia>
+          <ixx>5.6896649183892615e-06</ixx>
+          <ixy>-9.885728980650317e-07</ixy>
+          <ixz>1.5822229466023953e-07</ixz>
+          <iyy>9.535369506553145e-07</iyy>
+          <iyz>8.665529952771417e-07</iyz>
+          <izz>6.229080818068123e-06</izz>
+        </inertia>
+      </inertial>
+      <visual name="control_arm_front_left_rg_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/control_arm_front_left_rg_1/control_arm_front_left_rg_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="control_arm_rear_left_rg_1">
+      <inertial>
+        <pose>0.030450000309859074 0.09818309611909387 0.05904019489970037 0.0 -0.0 0.0</pose>
+        <mass>0.03504660285514191</mass>
+        <inertia>
+          <ixx>1.711400739733517e-05</ixx>
+          <ixy>6.922209116674849e-13</ixy>
+          <ixz>5.736749102017505e-13</ixz>
+          <iyy>7.163074280774862e-07</iyy>
+          <iyz>1.8807504150519588e-06</iyz>
+          <izz>1.6771378348976287e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name="control_arm_rear_left_rg_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/control_arm_rear_left_rg_1/control_arm_rear_left_rg_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="control_arm_rear_right_rg_1">
+      <inertial>
+        <pose>0.03045000030985955 -0.09818309403492315 0.059040176866837275 0.0 -0.0 0.0</pose>
+        <mass>0.03504660285513623</mass>
+        <inertia>
+          <ixx>1.7114007397414914e-05</ixx>
+          <ixy>-5.385518149058494e-13</ixy>
+          <ixz>-7.559428885813013e-13</ixz>
+          <iyy>7.163110671061263e-07</iyy>
+          <iyz>-1.8807659473120614e-06</iyz>
+          <izz>1.677137471002728e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name="control_arm_rear_right_rg_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/control_arm_rear_right_rg_1/control_arm_rear_right_rg_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="differential_front_1">
+      <pose relative_to="__model__">0.3436000000000665 0.0 0.0036999093088870083 0.0 -1.1657341758564144e-15 -1.5707963267948966</pose>
+      <inertial>
+        <pose>-8.44559915346378e-05 0.039099562118065145 0.01674003645140541 1.1657341758564144e-15 7.138063135596178e-32 1.5707963267948966</pose>
+        <mass>0.7503417863615309</mass>
+        <inertia>
+          <ixx>0.0002567176694391985</ixx>
+          <ixy>-1.2827473389099599e-06</ixy>
+          <ixz>-1.2445211394424352e-05</ixz>
+          <iyy>0.0003887478901417468</iyy>
+          <iyz>-4.248755756759723e-07</iyz>
+          <izz>0.000407479289013149</izz>
+        </inertia>
+      </inertial>
+      <visual name="differential_front_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/differential_front_1/differential_front_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="spider_mount_front_1">
+      <pose relative_to="__model__">0.3858 3.552713678800501e-17 0.043999999999999914 -6.123233995736769e-17 -1.1657341758564142e-15 -1.5707963267948966</pose>
+      <inertial>
+        <pose>2.827182815004882e-17 0.0024999999999999988 0.0144042560376452 1.1657341758564142e-15 -6.123233995736761e-17 1.5707963267948966</pose>
+        <mass>0.07934578900228545</mass>
+        <inertia>
+          <ixx>5.918636608276135e-05</ixx>
+          <ixy>-2.7888802378583936e-21</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.4610673118774231e-05</iyy>
+          <iyz>-8.606491549312291e-20</iyz>
+          <izz>4.490630041815817e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name="spider_mount_front_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/spider_mount_front_1/spider_mount_front_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="semitrailing_arm_front_1">
+      <pose relative_to="__model__">0.4106 0.024250000000000004 0.003749999999999986 8.094739377180083e-48 1.043269495941679e-15 1.5707963267948966</pose>
+      <inertial>
+        <pose>0.049357321962360645 0.024576339877947165 0.004999984613443037 1.043269495941679e-15 -6.38818324426525e-32 -1.5707963267948966</pose>
+        <mass>0.029251641005447807</mass>
+        <inertia>
+          <ixx>2.7349320784042475e-05</ixx>
+          <ixy>-1.2479468591079486e-06</ixy>
+          <ixz>1.799257764263304e-12</ixz>
+          <iyy>7.600420202809148e-06</iyy>
+          <iyz>5.9342770599563315e-12</iyz>
+          <izz>3.4491557601368066e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name="semitrailing_arm_front_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/semitrailing_arm_front_1/semitrailing_arm_front_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="semitrailing_arm_front_2">
+      <pose relative_to="__model__">0.4106 -0.024250000000000008 0.013750000000000031 -3.141592653589793 -1.1657341758564144e-15 -1.5707963267948966</pose>
+      <inertial>
+        <pose>0.04935732196236064 0.024576339877947165 0.004999984613443021 -3.1415926535897922 -1.224646799147354e-16 -1.5707963267948966</pose>
+        <mass>0.029251641005447807</mass>
+        <inertia>
+          <ixx>2.7349320784042502e-05</ixx>
+          <ixy>1.2479468591081655e-06</ixy>
+          <ixz>-1.7992577778158311e-12</ixz>
+          <iyy>7.600420202809148e-06</iyy>
+          <iyz>5.9342770599563315e-12</iyz>
+          <izz>3.4491557601368066e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name="semitrailing_arm_front_2_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/semitrailing_arm_front_1/semitrailing_arm_front_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="wheel_carrier_front_v2_1">
+      <pose relative_to="__model__">0.38685 0.11064999999999997 0.0292499999999999 -1.1045018358990466e-15 -0.0 9.391225261512981e-17</pose>
+      <inertial>
+        <pose>-0.0005104410433466216 0.0020185755193544022 -0.00011845076941218284 1.1045018358990466e-15 1.0372625542682592e-31 -9.391225261512981e-17</pose>
+        <mass>0.011947915260474761</mass>
+        <inertia>
+          <ixx>4.362491919750942e-06</ixx>
+          <ixy>1.1696269662541704e-08</ixy>
+          <ixz>1.0526537597054723e-07</ixz>
+          <iyy>3.951913694342493e-06</iyy>
+          <iyz>6.190187975998584e-07</iyz>
+          <izz>1.242829664971747e-06</izz>
+        </inertia>
+      </inertial>
+      <visual name="wheel_carrier_front_v2_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/wheel_carrier_front_v2_1/wheel_carrier_front_v2_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="wheel_carrier_front_v2_mirror_1">
+      <pose relative_to="__model__">0.38685 -0.11064999999999997 0.02925000000000013 3.1415926535897922 -1.7960978851819543e-48 8.516203692015313e-17</pose>
+      <inertial>
+        <pose>-0.0005104410433466417 0.0020185755193543944 0.00011845076941218523 -3.1415926535897922 -8.606842496249876e-32 8.516203692015313e-17</pose>
+        <mass>0.01194791526047476</mass>
+        <inertia>
+          <ixx>4.362491919750888e-06</ixx>
+          <ixy>-1.1696269662541704e-08</ixy>
+          <ixz>1.0526537597054723e-07</ixz>
+          <iyy>3.951913694342276e-06</iyy>
+          <iyz>-6.190187975998719e-07</iyz>
+          <izz>1.242829664971747e-06</izz>
+        </inertia>
+      </inertial>
+      <visual name="wheel_carrier_front_v2_mirror_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/wheel_carrier_front_v2_mirror_1/wheel_carrier_front_v2_mirror_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="suspension_arm_1">
+      <pose relative_to="__model__">0.4013499999999998 0.046768079427677696 0.05872143674181067 -0.6073862821491302 -6.123233995736767e-17 -3.141592653589793</pose>
+      <inertial>
+        <pose>-5.55948805418751e-13 -9.325294464894819e-15 0.013267929730589257 -0.6073862821491302 -1.2017390977481361e-16 3.141592653589793</pose>
+        <mass>0.013046047781877337</mass>
+        <inertia>
+          <ixx>8.606718120518459e-07</ixx>
+          <ixy>-2.8433201973432354e-17</ixy>
+          <ixz>4.092863201132779e-17</ixz>
+          <iyy>6.211528185166501e-07</iyy>
+          <iyz>3.1465532114740126e-07</iyz>
+          <izz>3.871310544785976e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="suspension_arm_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/suspension_arm_1/suspension_arm_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="suspension_arm_2">
+      <pose relative_to="__model__">0.40135000000000004 0.06723192057232236 0.029278563258189293 2.534206371440663 -1.829132289718738e-17 -3.141592653589793</pose>
+      <inertial>
+        <pose>-5.559553302056449e-13 -9.371555159183208e-15 0.013267929730589267 2.534206371440663 8.491321437117767e-17 -3.141592653589793</pose>
+        <mass>0.013046047781877337</mass>
+        <inertia>
+          <ixx>8.606718120518324e-07</ixx>
+          <ixy>2.856872724499304e-17</ixy>
+          <ixz>-4.0996394647108136e-17</ixz>
+          <iyy>6.211528185166501e-07</iyy>
+          <iyz>3.146553211474148e-07</iyz>
+          <izz>3.871310544790313e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="suspension_arm_2_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/suspension_arm_1/suspension_arm_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="suspension_arm_3">
+      <pose relative_to="__model__">0.40135 -0.04676807942767763 0.05872143674181076 0.6073862821491339 -6.123233995736765e-17 3.141592653589793</pose>
+      <inertial>
+        <pose>-5.55948805418751e-13 -9.361146818327348e-15 0.013267929730589257 0.6073862821491339 -1.2017390977481386e-16 -3.141592653589793</pose>
+        <mass>0.013046047781877337</mass>
+        <inertia>
+          <ixx>8.606718120517917e-07</ixx>
+          <ixy>2.837899186480808e-17</ixy>
+          <ixz>4.103705222857634e-17</ixz>
+          <iyy>6.211528185136143e-07</iyy>
+          <iyz>-3.146553211484245e-07</iyz>
+          <izz>3.871310544811997e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="suspension_arm_3_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/suspension_arm_1/suspension_arm_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="suspension_arm_4">
+      <pose relative_to="__model__">0.40135000000000004 -0.06723192057232241 0.029278563258189467 -2.5342063714406624 -3.658264579437472e-17 -3.141592653589793</pose>
+      <inertial>
+        <pose>-5.559342724535285e-13 -9.355942647899417e-15 0.013267929730589278 -2.5342063714406624 -3.985386487067233e-17 -3.141592653589793</pose>
+        <mass>0.013046047781877337</mass>
+        <inertia>
+          <ixx>8.606718120517917e-07</ixx>
+          <ixy>-2.856872724499304e-17</ixy>
+          <ixz>-4.0969289592796e-17</ixz>
+          <iyy>6.21152818514048e-07</iyy>
+          <iyz>-3.146553211484109e-07</iyz>
+          <izz>3.8713105448206706e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="suspension_arm_4_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/suspension_arm_1/suspension_arm_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="knuckle_arm_front_v2_1">
+      <pose relative_to="__model__">0.38585000000000014 0.1386499999999999 0.02774999999999986 1.1045018358990474e-15 2.7755575615628953e-16 3.141592653589793</pose>
+      <inertial>
+        <pose>-6.3758331591333285e-15 0.010846581858917525 -5.433784174820803e-15 1.1045018358990474e-15 2.775557561562894e-16 -3.141592653589793</pose>
+        <mass>0.0029483000928651045</mass>
+        <inertia>
+          <ixx>2.9090741249553146e-07</ixx>
+          <ixy>1.6263032587282567e-19</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.0910405342731914e-07</iyy>
+          <iyz>3.7269449679189215e-20</iyz>
+          <izz>2.336333499725475e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="knuckle_arm_front_v2_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/knuckle_arm_front_v2_1/knuckle_arm_front_v2_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="knuckle_arm_front_v2_2">
+      <pose relative_to="__model__">0.3858499999999998 -0.13865000000000002 0.027750000000000167 -3.1415926535897922 -2.8037516642741814e-16 3.141592653589793</pose>
+      <inertial>
+        <pose>-6.391653385420945e-15 0.010846581858917506 -5.436459170737579e-15 -3.1415926535897922 2.803751664274183e-16 3.141592653589793</pose>
+        <mass>0.0029483000928651045</mass>
+        <inertia>
+          <ixx>2.9090741249553824e-07</ixx>
+          <ixy>-1.8973538018496328e-19</ixy>
+          <ixz>1.3552527156068805e-20</ixz>
+          <iyy>3.0910405342731914e-07</iyy>
+          <iyz>3.5575383784680614e-20</iyz>
+          <izz>2.336333499725475e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="knuckle_arm_front_v2_2_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/knuckle_arm_front_v2_1/knuckle_arm_front_v2_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="wheel_flange_1">
+      <pose relative_to="__model__">0.38585 -0.13865000000000005 0.027750000000000167 1.2241471055426676e-15 -2.8037516642741814e-16 3.141592653589793</pose>
+      <inertial>
+        <pose>1.859862013422338e-08 0.004489597330348886 9.966493209461948e-09 1.2241471055426676e-15 -2.803751664274183e-16 -3.141592653589793</pose>
+        <mass>0.011771012179768224</mass>
+        <inertia>
+          <ixx>3.739253607520725e-07</ixx>
+          <ixy>2.2573169657265357e-10</ixy>
+          <ixz>-8.000538708093086e-13</ixz>
+          <iyy>4.688827262050617e-07</iyy>
+          <iyz>4.0689850712991374e-13</iyz>
+          <izz>3.739263661002752e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="wheel_flange_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/wheel_flange_1/wheel_flange_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="wheel_flange_2">
+      <pose relative_to="__model__">0.38585 0.13864999999999988 0.027749999999999865 -1.1045018358990456e-15 -4.0002043607102487e-16 4.437342591868191e-31</pose>
+      <inertial>
+        <pose>1.859862009956193e-08 0.004489597330348869 9.966493200455894e-09 1.1045018358990456e-15 4.0002043607102487e-16 -1.9109531492353737e-33</pose>
+        <mass>0.011771012179768224</mass>
+        <inertia>
+          <ixx>3.7392536075218094e-07</ixx>
+          <ixy>2.25731696789494e-10</ixy>
+          <ixz>8.000538979143629e-13</ixz>
+          <iyy>4.68882726204628e-07</iyy>
+          <iyz>-4.068985206824409e-13</iyz>
+          <izz>3.7392636609984153e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="wheel_flange_2_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/wheel_flange_1/wheel_flange_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="differential_front_2">
+      <pose relative_to="__model__">0.06699999999993352 -5.329070518200751e-17 0.0036999093088870083 0.0 -0.0 1.5707963267948966</pose>
+      <inertial>
+        <pose>-8.445599153464267e-05 0.0390995621180653 0.01674003645140541 0.0 -0.0 -1.5707963267948966</pose>
+        <mass>0.7503417863615309</mass>
+        <inertia>
+          <ixx>0.0002567176694391985</ixx>
+          <ixy>-1.282747338909982e-06</ixy>
+          <ixz>1.2445211394421858e-05</ixz>
+          <iyy>0.0003887478901416639</iyy>
+          <iyz>4.2487557567599536e-07</iyz>
+          <izz>0.00040747928901308146</izz>
+        </inertia>
+      </inertial>
+      <visual name="differential_front_2_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/differential_front_1/differential_front_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="spider_mount_rear_1">
+      <pose relative_to="__model__">0.019800000000000012 -4.4408920985006264e-17 0.04400000000000002 6.123233995736767e-17 6.123233995736767e-17 -1.5707963267948966</pose>
+      <inertial>
+        <pose>-5.395489918753172e-17 0.0025000000000000027 0.016481999829439938 -6.123233995736767e-17 6.123233995736767e-17 1.5707963267948966</pose>
+        <mass>0.09277715458372147</mass>
+        <inertia>
+          <ixx>8.383565076055074e-05</ixx>
+          <ixy>-6.018531076210112e-36</ixy>
+          <ixz>2.710505431213761e-20</ixz>
+          <iyy>1.920019698026628e-05</iyy>
+          <iyz>1.0224464662479295e-19</iyz>
+          <izz>6.50220252577165e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name="spider_mount_rear_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/spider_mount_rear_1/spider_mount_rear_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="semitrailing_arm_rear_1">
+      <pose relative_to="__model__">0.0029999999999999827 0.024749999999999942 0.0037500000000000155 -1.232595164407831e-32 2.7369110631344083e-48 1.5707963267948968</pose>
+      <inertial>
+        <pose>0.0561984419469621 -0.02677422652827406 0.005000000000108095 7.547468613682777e-49 1.232595164407831e-32 -1.5707963267948968</pose>
+        <mass>0.03671627072778106</mass>
+        <inertia>
+          <ixx>3.826733426554182e-05</ixx>
+          <ixy>8.461409459780181e-07</ixy>
+          <ixz>3.914308655851573e-17</ixz>
+          <iyy>1.1433630089882183e-05</iyy>
+          <iyz>-2.1860565115917885e-16</iyz>
+          <izz>4.9101633029544165e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name="semitrailing_arm_rear_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/semitrailing_arm_rear_1/semitrailing_arm_rear_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="semitrailing_arm_rear_2">
+      <pose relative_to="__model__">0.0029999999999999805 -0.02475000000000008 0.013750000000000016 3.141592653589793 1.1102230246251565e-16 -1.5707963267948968</pose>
+      <inertial>
+        <pose>0.0561984419469621 -0.02677422652827407 0.00500000000010809 3.141592653589793 1.224646799147353e-16 -1.5707963267948968</pose>
+        <mass>0.03671627072778106</mass>
+        <inertia>
+          <ixx>3.826733426554179e-05</ixx>
+          <ixy>-8.461409459780181e-07</ixy>
+          <ixz>-3.914139249262122e-17</ixz>
+          <iyy>1.1433630089882163e-05</iyy>
+          <iyz>-2.1862597994991295e-16</iyz>
+          <izz>4.910163302954411e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name="semitrailing_arm_rear_2_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/semitrailing_arm_rear_1/semitrailing_arm_rear_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="wheel_flange_3">
+      <pose relative_to="__model__">0.02585000000000001 -0.1386500000000001 0.027750000000000004 -2.303712776097199e-15 3.944304526105062e-31 -3.141592653589793</pose>
+      <inertial>
+        <pose>1.8598620116399246e-08 0.004489597330348866 9.966493200330344e-09 -2.303712776097199e-15 1.1230700487027636e-31 3.141592653589793</pose>
+        <mass>0.011771012179768224</mass>
+        <inertia>
+          <ixx>3.7392536075218094e-07</ixx>
+          <ixy>2.257316968301516e-10</ixy>
+          <ixz>-8.000539046906265e-13</ixz>
+          <iyy>4.6888272620495666e-07</iyy>
+          <iyz>4.0689852745870447e-13</iyz>
+          <izz>3.739263661000584e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="wheel_flange_3_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/wheel_flange_1/wheel_flange_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="wheel_flange_4">
+      <pose relative_to="__model__">0.02584999999999999 0.13865000000000002 0.027750000000000084 1.0998146837692927e-15 -1.2246467991473525e-16 -2.696520949843182e-16</pose>
+      <inertial>
+        <pose>1.8598620115711908e-08 0.004489597330348853 9.966493202646548e-09 -1.0998146837692927e-15 1.2246467991473554e-16 2.6965209498431806e-16</pose>
+        <mass>0.011771012179768224</mass>
+        <inertia>
+          <ixx>3.7392536075223515e-07</ixx>
+          <ixy>2.2573169683692785e-10</ixy>
+          <ixz>8.000539046906265e-13</ixz>
+          <iyy>4.688827262049465e-07</iyy>
+          <iyz>-4.068985206824409e-13</iyz>
+          <izz>3.739263661000584e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="wheel_flange_4_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/wheel_flange_1/wheel_flange_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="wheel_carrier_rear_v2_1">
+      <pose relative_to="__model__">0.025849999999999977 0.13865000000000002 0.027750000000000018 -1.0998146837692953e-15 -2.3004365094818972e-32 -3.141592653589793</pose>
+      <inertial>
+        <pose>-0.0014301322667345608 0.007706716103923703 0.002832387724147201 -1.0998146837692953e-15 -1.5769281830815156e-31 3.141592653589793</pose>
+        <mass>0.007635996515684608</mass>
+        <inertia>
+          <ixx>1.964772758033693e-06</ixx>
+          <ixy>5.153656304717044e-08</ixy>
+          <ixz>-2.4536900979004196e-07</ixz>
+          <iyy>2.2004786285132616e-06</iyy>
+          <iyz>3.4960646634870775e-07</iyz>
+          <izz>5.732347320231486e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="wheel_carrier_rear_v2_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/wheel_carrier_rear_v2_1/wheel_carrier_rear_v2_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="wheel_carrier_rear_v2_mirror_1">
+      <pose relative_to="__model__">0.02584999999999998 -0.13865000000000005 0.02775 3.141592653589791 3.240129930734306e-32 -3.141592653589793</pose>
+      <inertial>
+        <pose>-0.001430132266734567 0.007706716103923691 -0.00283238772414719 3.141592653589791 2.545225132086537e-31 -3.141592653589793</pose>
+        <mass>0.007635996515684608</mass>
+        <inertia>
+          <ixx>1.964772758033666e-06</ixx>
+          <ixy>-5.153656304717044e-08</ixy>
+          <ixz>-2.4536900979003857e-07</ixz>
+          <iyy>2.2004786285132684e-06</iyy>
+          <iyz>-3.4960646634871114e-07</iyz>
+          <izz>5.732347320231757e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="wheel_carrier_rear_v2_mirror_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/wheel_carrier_rear_v2_mirror_1/wheel_carrier_rear_v2_mirror_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="suspension_arm_5">
+      <pose relative_to="__model__">0.013100000000000032 0.05503591468314612 0.05979312500626063 -0.6756909376196034 1.2246467991473537e-16 -3.141592653589793</pose>
+      <inertial>
+        <pose>-5.559406241664334e-13 -9.345085801256085e-15 0.013267929730589264 -0.6756909376196034 1.896223661597764e-17 3.141592653589793</pose>
+        <mass>0.013046047781877337</mass>
+        <inertia>
+          <ixx>8.606718120518188e-07</ixx>
+          <ixy>-3.1204693776848424e-17</ixy>
+          <ixz>3.8929634255807644e-17</ixz>
+          <iyy>5.77211407480502e-07</iyy>
+          <iyz>3.2765892334491565e-07</iyz>
+          <izz>4.3107246551532844e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="suspension_arm_5_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/suspension_arm_1/suspension_arm_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="suspension_arm_6">
+      <pose relative_to="__model__">0.013099999999999999 0.08031408531685379 0.028256874993739408 2.46590171597019 -1.0103157740751444e-15 -3.141592653589793</pose>
+      <inertial>
+        <pose>-5.559449228663369e-13 -9.35661546736657e-15 0.01326792973058927 2.46590171597019 8.649180318372988e-16 3.1415926535897927</pose>
+        <mass>0.013046047781877337</mass>
+        <inertia>
+          <ixx>8.606718120517782e-07</ixx>
+          <ixy>3.1206387842742933e-17</ixy>
+          <ixz>-3.893005777228127e-17</ixz>
+          <iyy>5.77211407480502e-07</iyy>
+          <iyz>3.2765892334491226e-07</iyz>
+          <izz>4.3107246551530134e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="suspension_arm_6_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/suspension_arm_1/suspension_arm_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="suspension_arm_7">
+      <pose relative_to="__model__">0.013100000000000006 -0.055035914683146316 0.05979312500626069 -0.6756909376196076 -9.092657151534285e-17 1.8662095136034893e-17</pose>
+      <inertial>
+        <pose>-5.559473473078354e-13 -9.360013651549037e-15 0.01326792973058926 0.6756909376196076 8.261968766059557e-17 4.2307238308199764e-17</pose>
+        <mass>0.013046047781877337</mass>
+        <inertia>
+          <ixx>8.606718120518053e-07</ixx>
+          <ixy>-3.1206387842742933e-17</ixy>
+          <ixz>-3.893132832170215e-17</ixz>
+          <iyy>5.77211407480502e-07</iyy>
+          <iyz>-3.2765892334490887e-07</iyz>
+          <izz>4.3107246551532167e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="suspension_arm_7_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/suspension_arm_1/suspension_arm_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="suspension_arm_8">
+      <pose relative_to="__model__">0.013099999999999976 -0.08031408531685394 0.02825687499373935 2.4659017159701895 -6.694844320402179e-17 9.48075449106368e-17</pose>
+      <inertial>
+        <pose>-5.559461778673852e-13 -9.348004250277825e-15 0.013267929730589252 -2.4659017159701895 -1.1153430384590315e-16 3.21039512371032e-17</pose>
+        <mass>0.013046047781877337</mass>
+        <inertia>
+          <ixx>8.606718120518188e-07</ixx>
+          <ixy>3.1206387842742933e-17</ixy>
+          <ixz>3.8930904805228525e-17</ixz>
+          <iyy>5.772114074805012e-07</iyy>
+          <iyz>-3.2765892334491226e-07</iyz>
+          <izz>4.3107246551530134e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name="suspension_arm_8_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/suspension_arm_1/suspension_arm_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="wheel_track_1">
+      <pose relative_to="__model__">0.02585000000000001 -0.12885588235350012 0.02775000000000002 -2.0816681711721685e-15 1.072808564760927e-31 3.141592653589793</pose>
+      <inertial>
+        <pose>-9.59338627844083e-09 0.0015669550856703353 -5.2394661170320544e-09 -2.0816681711721685e-15 3.6221168274738474e-31 -3.141592653589793</pose>
+        <mass>0.13370088436668998</mass>
+        <inertia>
+          <ixx>0.00013345931022364045</ixx>
+          <ixy>-3.834510725435336e-12</ixy>
+          <ixz>2.985603164164501e-11</ixz>
+          <iyy>0.00022514435721640078</iyy>
+          <iyz>1.3848062236851422e-12</iyz>
+          <izz>0.00013345935846124576</izz>
+        </inertia>
+      </inertial>
+      <visual name="wheel_track_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/wheel_track_1/wheel_track_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="wheel_track_1_collision">
+        <geometry>
+          <sphere>
+            <radius>0.048</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1000000.0</kp>
+              <kd>100.0</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+            <torsional>
+              <coefficient>0.0</coefficient>
+              <use_patch_radius>true</use_patch_radius>
+              <patch_radius>0.01</patch_radius>
+            </torsional>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <link name="wheel_track_2">
+      <pose relative_to="__model__">0.3858500000000001 0.12885588235349987 0.02774999999999988 -8.824572309740151e-16 -4.0002043607102487e-16 4.418233060375841e-31</pose>
+      <inertial>
+        <pose>-9.593386296470885e-09 0.0015669550856703162 -5.239466112064756e-09 8.824572309740151e-16 4.0002043607102487e-16 -8.882237968932946e-32</pose>
+        <mass>0.13370088436668998</mass>
+        <inertia>
+          <ixx>0.00013345931022364045</ixx>
+          <ixy>-3.834512568579029e-12</ixy>
+          <ixz>-2.9856031492567214e-11</ixz>
+          <iyy>0.0002251443572164058</iyy>
+          <iyz>-1.3848062236851422e-12</iyz>
+          <izz>0.00013345935846124923</izz>
+        </inertia>
+      </inertial>
+      <visual name="wheel_track_2_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/wheel_track_1/wheel_track_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="wheel_track_2_collision">
+        <geometry>
+          <sphere>
+            <radius>0.048</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1000000.0</kp>
+              <kd>100.0</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+            <torsional>
+              <coefficient>0.0</coefficient>
+              <use_patch_radius>true</use_patch_radius>
+              <patch_radius>0.01</patch_radius>
+            </torsional>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <link name="wheel_track_3">
+      <pose relative_to="__model__">0.02584999999999999 0.12885588235349998 0.027750000000000073 1.3218592886943268e-15 -1.2246467991473557e-16 -1.3250398017384183e-31</pose>
+      <inertial>
+        <pose>-9.593386279886927e-09 0.0015669550856703218 -5.2394661165368164e-09 -1.3218592886943268e-15 1.2246467991473557e-16 -2.9377094508428937e-32</pose>
+        <mass>0.13370088436668998</mass>
+        <inertia>
+          <ixx>0.00013345931022364088</ixx>
+          <ixy>-3.834510779645445e-12</ixy>
+          <ixz>-2.985603169585512e-11</ixz>
+          <iyy>0.00022514435721640092</iyy>
+          <iyz>-1.3848061694750335e-12</iyz>
+          <izz>0.00013345935846124663</izz>
+        </inertia>
+      </inertial>
+      <visual name="wheel_track_3_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/wheel_track_1/wheel_track_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="wheel_track_3_collision">
+        <geometry>
+          <sphere>
+            <radius>0.048</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1000000.0</kp>
+              <kd>100.0</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+            <torsional>
+              <coefficient>0.0</coefficient>
+              <use_patch_radius>true</use_patch_radius>
+              <patch_radius>0.01</patch_radius>
+            </torsional>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <link name="wheel_track_4">
+      <pose relative_to="__model__">0.38584999999999986 -0.12885588235350007 0.027750000000000163 1.4461917104676995e-15 -2.803751664274182e-16 3.141592653589793</pose>
+      <inertial>
+        <pose>-9.593386371274382e-09 0.0015669550856703058 -5.2394661150792e-09 1.4461917104676995e-15 -2.803751664274184e-16 -3.141592653589793</pose>
+        <mass>0.13370088436668998</mass>
+        <inertia>
+          <ixx>0.00013345931022364131</ixx>
+          <ixy>-3.834510833855553e-12</ixy>
+          <ixz>2.9856031926248083e-11</ixz>
+          <iyy>0.00022514435721639886</iyy>
+          <iyz>1.3848060610548163e-12</iyz>
+          <izz>0.0001334593584612423</izz>
+        </inertia>
+      </inertial>
+      <visual name="wheel_track_4_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_damped/meshes/wheel_track_1/wheel_track_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="wheel_track_4_collision">
+        <geometry>
+          <sphere>
+            <radius>0.048</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+              <kp>1000000.0</kp>
+              <kd>100.0</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+            <torsional>
+              <coefficient>0.0</coefficient>
+              <use_patch_radius>true</use_patch_radius>
+              <patch_radius>0.01</patch_radius>
+            </torsional>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <joint name="revolute_3" type="revolute">
+      <pose relative_to="__model__">0.4106 0.029750000000000002 0.008749999999999982 0.0 -0.0 0.0</pose>
+      <parent>differential_front_1</parent>
+      <child>semitrailing_arm_front_1</child>
+      <axis>
+        <xyz expressed_in="__model__">-1.0 0.0 0.0</xyz>
+        <limit>
+          <lower>-0.2617993877991494</lower>
+          <upper>0.2617993877991494</upper>
+        </limit>
+      </axis>
+    </joint>
+    <joint name="revolute_4" type="revolute">
+      <pose relative_to="__model__">0.4106 -0.029750000000000006 0.00875000000000005 0.0 -0.0 0.0</pose>
+      <parent>differential_front_1</parent>
+      <child>semitrailing_arm_front_2</child>
+      <axis>
+        <xyz expressed_in="__model__">-1.0 0.0 0.0</xyz>
+        <limit>
+          <lower>-0.2617993877991494</lower>
+          <upper>0.2617993877991494</upper>
+        </limit>
+      </axis>
+    </joint>
+    <joint name="revolute_41" type="revolute">
+      <pose relative_to="__model__">0.38685 0.12924999999999992 0.008749999999999876 0.0 -0.0 0.0</pose>
+      <parent>semitrailing_arm_front_1</parent>
+      <child>wheel_carrier_front_v2_1</child>
+      <axis>
+        <xyz expressed_in="__model__">1.0 3.340332065832079e-17 -8.094739377180084e-48</xyz>
+      </axis>
+    </joint>
+    <joint name="revolute_42" type="revolute">
+      <pose relative_to="__model__">0.38685 -0.12925 0.008750000000000153 0.0 -0.0 0.0</pose>
+      <parent>semitrailing_arm_front_2</parent>
+      <child>wheel_carrier_front_v2_mirror_1</child>
+      <axis>
+        <xyz expressed_in="__model__">-1.0 -3.318992936941061e-17 -8.980489425909777e-49</xyz>
+      </axis>
+    </joint>
+    <joint name="steering_left_joint" type="revolute">
+      <pose relative_to="__model__">0.38585 0.11764999999999998 0.027749999999999882 0.0 -0.0 0.0</pose>
+      <parent>wheel_carrier_front_v2_1</parent>
+      <child>knuckle_arm_front_v2_1</child>
+      <axis>
+        <xyz expressed_in="__model__">-1.0529914392694386e-31 1.1045018358990466e-15 1.0</xyz>
+      </axis>
+    </joint>
+    <joint name="steering_right_joint" type="revolute">
+      <pose relative_to="__model__">0.38585 -0.11764999999999999 0.027750000000000136 0.0 -0.0 0.0</pose>
+      <parent>wheel_carrier_front_v2_mirror_1</parent>
+      <child>knuckle_arm_front_v2_2</child>
+      <axis>
+        <xyz expressed_in="__model__">2.819410271128994e-18 1.226966515813782e-15 1.0</xyz>
+      </axis>
+    </joint>
+    <joint name="suspension_front_left" type="prismatic">
+      <pose relative_to="__model__">0.40135000000000004 0.06723192057232236 0.029278563258189293 0.0 -0.0 0.0</pose>
+      <parent>suspension_arm_2</parent>
+      <child>suspension_arm_1</child>
+      <axis>
+        <xyz expressed_in="__model__">-5.401076489421559e-17 0.5707231771071056 -0.8211425303275741</xyz>
+        <limit>
+          <lower>-0.01</lower>
+          <upper>0.01</upper>
+        </limit>
+        <dynamics>
+          <damping>200</damping>
+          <spring_stiffness>120000</spring_stiffness>
+          <spring_reference>0</spring_reference>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="suspension_front_right" type="prismatic">
+      <pose relative_to="__model__">0.40135000000000004 -0.0672319205723224 0.029278563258189463 0.0 -0.0 0.0</pose>
+      <parent>suspension_arm_4</parent>
+      <child>suspension_arm_3</child>
+      <axis>
+        <xyz expressed_in="__model__">2.7171838726951966e-17 -0.5707231771071066 -0.8211425303275742</xyz>
+        <limit>
+          <lower>-0.01</lower>
+          <upper>0.01</upper>
+        </limit>
+        <dynamics>
+          <damping>200</damping>
+          <spring_stiffness>120000</spring_stiffness>
+          <spring_reference>0</spring_reference>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="revolute_79" type="revolute">
+      <pose relative_to="__model__">0.032 -0.029750000000000054 0.008750000000000015 0.0 -0.0 0.0</pose>
+      <parent>differential_front_2</parent>
+      <child>semitrailing_arm_rear_2</child>
+      <axis>
+        <xyz expressed_in="__model__">-1.0000000000000002 0.0 0.0</xyz>
+        <limit>
+          <lower>-0.2617993877991494</lower>
+          <upper>0.2617993877991494</upper>
+        </limit>
+      </axis>
+    </joint>
+    <joint name="revolute_80" type="revolute">
+      <pose relative_to="__model__">0.024949999999999983 -0.1346500000000001 0.008750000000000003 0.0 -0.0 0.0</pose>
+      <parent>semitrailing_arm_rear_2</parent>
+      <child>wheel_carrier_rear_v2_mirror_1</child>
+      <axis>
+        <xyz expressed_in="__model__">1.0 3.1390302438537774e-17 -1.232595164407831e-32</xyz>
+      </axis>
+    </joint>
+    <joint name="revolute_81" type="revolute">
+      <pose relative_to="__model__">0.03044999999999998 -0.12665000000000018 0.05575000000000003 0.0 -0.0 0.0</pose>
+      <parent>wheel_carrier_rear_v2_mirror_1</parent>
+      <child>control_arm_rear_right_rg_1</child>
+      <axis>
+        <xyz expressed_in="__model__">1.0 5.708969787742681e-17 1.4518764143020835e-16</xyz>
+      </axis>
+    </joint>
+    <joint name="revolute_83" type="revolute">
+      <pose relative_to="__model__">0.032 0.02974999999999996 0.008750000000000015 0.0 -0.0 0.0</pose>
+      <parent>differential_front_2</parent>
+      <child>semitrailing_arm_rear_1</child>
+      <axis>
+        <xyz expressed_in="__model__">-1.0000000000000002 0.0 0.0</xyz>
+        <limit>
+          <lower>-0.2617993877991494</lower>
+          <upper>0.2617993877991494</upper>
+        </limit>
+      </axis>
+    </joint>
+    <joint name="revolute_84" type="revolute">
+      <pose relative_to="__model__">0.024949999999999983 0.13464999999999996 0.008750000000000015 0.0 -0.0 0.0</pose>
+      <parent>semitrailing_arm_rear_1</parent>
+      <child>wheel_carrier_rear_v2_1</child>
+      <axis>
+        <xyz expressed_in="__model__">-1.0 -3.1390322141750697e-17 -1.232595164407831e-32</xyz>
+      </axis>
+    </joint>
+    <joint name="revolute_85" type="revolute">
+      <pose relative_to="__model__">0.030449999999999977 0.12664999999999987 0.05575000000000001 0.0 -0.0 0.0</pose>
+      <parent>wheel_carrier_rear_v2_1</parent>
+      <child>control_arm_rear_left_rg_1</child>
+      <axis>
+        <xyz expressed_in="__model__">1.0 9.596582918964858e-18 1.4518764143020833e-16</xyz>
+      </axis>
+    </joint>
+    <joint name="revolute_90" type="revolute">
+      <pose relative_to="__model__">0.40135000000000004 -0.08150000000000002 0.008750000000000098 0.0 -0.0 0.0</pose>
+      <parent>semitrailing_arm_front_2</parent>
+      <child>suspension_arm_4</child>
+      <axis>
+        <xyz expressed_in="__model__">1.0 3.318992936941061e-17 8.980489425909777e-49</xyz>
+      </axis>
+    </joint>
+    <joint name="revolute_91" type="revolute">
+      <pose relative_to="__model__">0.40135000000000004 0.08149999999999996 0.008749999999999926 0.0 -0.0 0.0</pose>
+      <parent>semitrailing_arm_front_1</parent>
+      <child>suspension_arm_2</child>
+      <axis>
+        <xyz expressed_in="__model__">-1.0 -3.340332065832079e-17 8.094739377180084e-48</xyz>
+      </axis>
+    </joint>
+    <joint name="revolute_92" type="revolute">
+      <pose relative_to="__model__">0.38484999999999997 -0.10714999999999994 0.055250000000000125 0.0 -0.0 0.0</pose>
+      <parent>wheel_carrier_front_v2_mirror_1</parent>
+      <child>control_arm_front_right_rg_1</child>
+      <axis>
+        <xyz expressed_in="__model__">-1.0 -8.516203692015313e-17 -1.7960978851819543e-48</xyz>
+      </axis>
+    </joint>
+    <joint name="revolute_94" type="revolute">
+      <pose relative_to="__model__">0.38484999999999997 0.10715000000000005 0.055249999999999896 0.0 -0.0 0.0</pose>
+      <parent>wheel_carrier_front_v2_1</parent>
+      <child>control_arm_front_left_rg_1</child>
+      <axis>
+        <xyz expressed_in="__model__">-1.0 -9.391225261512981e-17 0.0</xyz>
+      </axis>
+    </joint>
+    <joint name="revolute_102" type="revolute">
+      <pose relative_to="__model__">0.013099999999999978 0.09594999999999995 0.008750000000000015 0.0 -0.0 0.0</pose>
+      <parent>semitrailing_arm_rear_1</parent>
+      <child>suspension_arm_6</child>
+      <axis>
+        <xyz expressed_in="__model__">-1.0 -3.1390322141750697e-17 -1.232595164407831e-32</xyz>
+      </axis>
+    </joint>
+    <joint name="suspension_rear_left" type="prismatic">
+      <pose relative_to="__model__">0.013099999999999999 0.08031408531685379 0.028256874993739408 0.0 -0.0 0.0</pose>
+      <parent>suspension_arm_6</parent>
+      <child>suspension_arm_5</child>
+      <axis>
+        <xyz expressed_in="__model__">-8.462537420557826e-16 0.6254365873258467 -0.7802749997495745</xyz>
+        <limit>
+          <lower>-0.01</lower>
+          <upper>0.01</upper>
+        </limit>
+        <dynamics>
+          <damping>200</damping>
+          <spring_stiffness>120000</spring_stiffness>
+          <spring_reference>0</spring_reference>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="revolute_105" type="revolute">
+      <pose relative_to="__model__">0.013099999999999983 -0.09595000000000009 0.008750000000000011 0.0 -0.0 0.0</pose>
+      <parent>semitrailing_arm_rear_2</parent>
+      <child>suspension_arm_8</child>
+      <axis>
+        <xyz expressed_in="__model__">-1.0 -3.1390302438537774e-17 1.232595164407831e-32</xyz>
+      </axis>
+    </joint>
+    <joint name="suspension_rear_right" type="prismatic">
+      <pose relative_to="__model__">0.013099999999999976 -0.08031408531685394 0.02825687499373935 0.0 -0.0 0.0</pose>
+      <parent>suspension_arm_8</parent>
+      <child>suspension_arm_7</child>
+      <axis>
+        <xyz expressed_in="__model__">1.1153430384590303e-16 -0.6254365873258467 -0.780274999749574</xyz>
+        <limit>
+          <lower>-0.01</lower>
+          <upper>0.01</upper>
+        </limit>
+        <dynamics>
+          <damping>200</damping>
+          <spring_stiffness>120000</spring_stiffness>
+          <spring_reference>0</spring_reference>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="wheel_front_left_joint" type="revolute">
+      <pose relative_to="__model__">0.3858500000000001 0.1386499999999999 0.02774999999999986 0.0 -0.0 0.0</pose>
+      <parent>knuckle_arm_front_v2_1</parent>
+      <child>wheel_flange_2</child>
+      <axis>
+        <xyz expressed_in="__model__">2.855242729960566e-17 1.0000000000000007 -1.1045018358990474e-15</xyz>
+      </axis>
+    </joint>
+    <joint name="wheel_front_right_joint" type="revolute">
+      <pose relative_to="__model__">0.38584999999999986 -0.13865000000000005 0.027750000000000167 0.0 -0.0 0.0</pose>
+      <parent>knuckle_arm_front_v2_2</parent>
+      <child>wheel_flange_1</child>
+      <axis>
+        <xyz expressed_in="__model__">3.730264299458418e-17 1.0000000000000004 -1.2241471055426686e-15</xyz>
+      </axis>
+    </joint>
+    <joint name="rigid_123" type="fixed">
+      <pose relative_to="__model__">0.02584999999999999 0.14364999999999997 0.027750000000000087 0.0 -0.0 0.0</pose>
+      <parent>wheel_flange_4</parent>
+      <child>wheel_track_3</child>
+      <axis />
+    </joint>
+    <joint name="rigid_124" type="fixed">
+      <pose relative_to="__model__">0.02585000000000001 -0.1436500000000001 0.02774999999999999 0.0 -0.0 0.0</pose>
+      <parent>wheel_flange_3</parent>
+      <child>wheel_track_1</child>
+      <axis />
+    </joint>
+    <joint name="rigid_125" type="fixed">
+      <pose relative_to="__model__">0.38585 0.1436499999999999 0.02774999999999986 0.0 -0.0 0.0</pose>
+      <parent>wheel_flange_2</parent>
+      <child>wheel_track_2</child>
+      <axis />
+    </joint>
+    <joint name="rigid_126" type="fixed">
+      <pose relative_to="__model__">0.3858499999999999 -0.14365000000000006 0.027750000000000174 0.0 -0.0 0.0</pose>
+      <parent>wheel_flange_1</parent>
+      <child>wheel_track_4</child>
+      <axis />
+    </joint>
+    <joint name="rigid_128" type="fixed">
+      <pose relative_to="__model__">0.3858 3.809740881174213e-17 0.04400000000000002 0.0 -0.0 0.0</pose>
+      <parent>differential_front_1</parent>
+      <child>spider_mount_front_1</child>
+      <axis />
+    </joint>
+    <joint name="rigid_129" type="fixed">
+      <pose relative_to="__model__">0.024800000000000013 -4.4408920985006264e-17 0.04400000000000002 0.0 -0.0 0.0</pose>
+      <parent>differential_front_2</parent>
+      <child>spider_mount_rear_1</child>
+      <axis />
+    </joint>
+    <joint name="wheel_rear_left_joint" type="revolute">
+      <pose relative_to="__model__">0.025849999999999977 0.13865 0.02775000000000002 0.0 -0.0 0.0</pose>
+      <parent>wheel_carrier_rear_v2_1</parent>
+      <child>wheel_flange_4</child>
+      <axis>
+        <xyz expressed_in="__model__">-7.903661171958237e-18 1.0000000000000002 1.0998146837692955e-15</xyz>
+      </axis>
+    </joint>
+    <joint name="wheel_rear_right_joint" type="revolute">
+      <pose relative_to="__model__">0.02584999999999998 -0.13865000000000005 0.02775 0.0 -0.0 0.0</pose>
+      <parent>wheel_carrier_rear_v2_mirror_1</parent>
+      <child>wheel_flange_3</child>
+      <axis>
+        <xyz expressed_in="__model__">-5.525750087902921e-17 1.0 2.3037127760972e-15</xyz>
+      </axis>
+    </joint>
+    <joint name="rigid_145" type="fixed">
+      <pose relative_to="__model__">0.4106 1.7763568394002505e-17 0.0030000000000000005 0.0 -0.0 0.0</pose>
+      <parent>base_link</parent>
+      <child>differential_front_1</child>
+      <axis />
+    </joint>
+    <joint name="rigid_146" type="fixed">
+      <pose relative_to="__model__">0.0 1.1102230246251565e-16 0.0030000000000000005 0.0 -0.0 0.0</pose>
+      <parent>base_link</parent>
+      <child>differential_front_2</child>
+      <axis />
+    </joint>
+
+    <link name="loop_closure_link_1">
+      <pose relative_to="__model__">0.3858 -0.030467716812999937 0.06752306378599998 0.0 -0.0 0.0</pose>
+      <inertial>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name="revolute_93" type="revolute">
+      <pose relative_to="__model__">0.3858 -0.030467716812999937 0.06752306378599998 0.0 -0.0 0.0</pose>
+      <parent>spider_mount_front_1</parent>
+      <child>loop_closure_link_1</child>
+      <axis>
+        <xyz expressed_in="__model__">1.0000000000000013 -8.678807091106167e-32 -6.123233995736777e-17</xyz>
+      </axis>
+    </joint>
+    <plugin filename="libgz-sim-detachable-joint-system.so" name="gz::sim::systems::DetachableJoint">
+      <parent_link>control_arm_front_right_rg_1</parent_link>
+      <child_link>loop_closure_link_1</child_link>
+      <child_model>__model__</child_model>
+      <attach_topic>loop_1/attach</attach_topic>
+      <detach_topic>loop_1/detach</detach_topic>
+      <output_topic>loop_1/state</output_topic>
+    </plugin>
+
+ 
+    <link name="loop_closure_link_2">
+      <pose relative_to="__model__">0.3858 0.030467716813000062 0.06752306378599991 0.0 -0.0 0.0</pose>
+      <inertial>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name="revolute_95" type="revolute">
+      <pose relative_to="__model__">0.3858 0.030467716813000062 0.06752306378599991 0.0 -0.0 0.0</pose>
+      <parent>spider_mount_front_1</parent>
+      <child>loop_closure_link_2</child>
+      <axis>
+        <xyz expressed_in="__model__">1.0000000000000013 -8.678807091106167e-32 -6.123233995736777e-17</xyz>
+      </axis>
+    </joint>
+    <plugin filename="libgz-sim-detachable-joint-system.so" name="gz::sim::systems::DetachableJoint">
+      <parent_link>control_arm_front_left_rg_1</parent_link>
+      <child_link>loop_closure_link_2</child_link>
+      <child_model>__model__</child_model>
+      <attach_topic>loop_2/attach</attach_topic>
+      <detach_topic>loop_2/detach</detach_topic>
+      <output_topic>loop_2/state</output_topic>
+    </plugin>
+
+
+    <link name="loop_closure_link_3">
+      <pose relative_to="__model__">0.02480000000000001 0.03701062065799996 0.06611045973300002 0.0 -0.0 0.0</pose>
+      <inertial>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name="revolute_136" type="revolute">
+      <pose relative_to="__model__">0.02480000000000001 0.03701062065799996 0.06611045973300002 0.0 -0.0 0.0</pose>
+      <parent>spider_mount_rear_1</parent>
+      <child>loop_closure_link_3</child>
+      <axis>
+        <xyz expressed_in="__model__">-0.9999999999999996 -0.0 -6.123233995736765e-17</xyz>
+      </axis>
+    </joint>
+    <plugin filename="libgz-sim-detachable-joint-system.so" name="gz::sim::systems::DetachableJoint">
+      <parent_link>control_arm_rear_left_rg_1</parent_link>
+      <child_link>loop_closure_link_3</child_link>
+      <child_model>__model__</child_model>
+      <attach_topic>loop_3/attach</attach_topic>
+      <detach_topic>loop_3/detach</detach_topic>
+      <output_topic>loop_3/state</output_topic>
+    </plugin>
+
+
+    <link name="loop_closure_link_4">
+      <pose relative_to="__model__">0.02480000000000001 -0.03701062065800004 0.06611045973300002 0.0 -0.0 0.0</pose>
+      <inertial>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name="revolute_139" type="revolute">
+      <pose relative_to="__model__">0.02480000000000001 -0.03701062065800004 0.06611045973300002 0.0 -0.0 0.0</pose>
+      <parent>spider_mount_rear_1</parent>
+      <child>loop_closure_link_4</child>
+      <axis>
+        <xyz expressed_in="__model__">0.9999999999999996 0.0 6.123233995736765e-17</xyz>
+      </axis>
+    </joint>
+    <plugin filename="libgz-sim-detachable-joint-system.so" name="gz::sim::systems::DetachableJoint">
+      <parent_link>control_arm_rear_right_rg_1</parent_link>
+      <child_link>loop_closure_link_4</child_link>
+      <child_model>__model__</child_model>
+      <attach_topic>loop_4/attach</attach_topic>
+      <detach_topic>loop_4/detach</detach_topic>
+      <output_topic>loop_4/state</output_topic>
+    </plugin>
+
+
+    <link name="loop_closure_link_5">
+      <pose relative_to="__model__">0.3908 -0.032499999999999925 0.07925 0.0 -0.0 0.0</pose>
+      <inertial>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name="revolute_70" type="revolute">
+      <pose relative_to="__model__">0.3908 -0.032499999999999925 0.07925 0.0 -0.0 0.0</pose>
+      <parent>spider_mount_front_1</parent>
+      <child>loop_closure_link_5</child>
+      <axis>
+        <xyz expressed_in="__model__">1.0000000000000013 -8.678807091106167e-32 -6.123233995736777e-17</xyz>
+      </axis>
+    </joint>
+    <plugin filename="libgz-sim-detachable-joint-system.so" name="gz::sim::systems::DetachableJoint">
+      <parent_link>suspension_arm_3</parent_link>
+      <child_link>loop_closure_link_5</child_link>
+      <child_model>__model__</child_model>
+      <attach_topic>loop_5/attach</attach_topic>
+      <detach_topic>loop_5/detach</detach_topic>
+      <output_topic>loop_5/state</output_topic>
+    </plugin>
+
+    <link name="loop_closure_link_6">
+      <pose relative_to="__model__">0.3908 0.03250000000000008 0.07924999999999993 0.0 -0.0 0.0</pose>
+      <inertial>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name="revolute_67" type="revolute">
+      <pose relative_to="__model__">0.3908 0.03250000000000008 0.07924999999999993 0.0 -0.0 0.0</pose>
+      <parent>spider_mount_front_1</parent>
+      <child>loop_closure_link_6</child>
+      <axis>
+        <xyz expressed_in="__model__">1.0000000000000013 -8.678807091106167e-32 -6.123233995736777e-17</xyz>
+      </axis>
+    </joint>
+    <plugin filename="libgz-sim-detachable-joint-system.so" name="gz::sim::systems::DetachableJoint">
+      <parent_link>suspension_arm_1</parent_link>
+      <child_link>loop_closure_link_6</child_link>
+      <child_model>__model__</child_model>
+      <attach_topic>loop_6/attach</attach_topic>
+      <detach_topic>loop_6/detach</detach_topic>
+      <output_topic>loop_6/state</output_topic>
+    </plugin>
+
+    <link name="loop_closure_link_7">
+      <pose relative_to="__model__">0.019800000000000012 0.03939999999999996 0.07930000000000001 0.0 -0.0 0.0</pose>
+      <inertial>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name="revolute_104" type="revolute">
+      <pose relative_to="__model__">0.019800000000000012 0.03939999999999996 0.07930000000000001 0.0 -0.0 0.0</pose>
+      <parent>spider_mount_rear_1</parent>
+      <child>loop_closure_link_7</child>
+      <axis>
+        <xyz expressed_in="__model__">-0.9999999999999996 -0.0 -6.123233995736765e-17</xyz>
+      </axis>
+    </joint>
+    <plugin filename="libgz-sim-detachable-joint-system.so" name="gz::sim::systems::DetachableJoint">
+      <parent_link>suspension_arm_5</parent_link>
+      <child_link>loop_closure_link_7</child_link>
+      <child_model>__model__</child_model>
+      <attach_topic>loop_7/attach</attach_topic>
+      <detach_topic>loop_7/detach</detach_topic>
+      <output_topic>loop_7/state</output_topic>
+    </plugin>
+
+    <link name="loop_closure_link_8">
+      <pose relative_to="__model__">0.019800000000000012 -0.039400000000000046 0.0793 0.0 -0.0 0.0</pose>
+      <inertial>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name="revolute_108" type="revolute">
+      <pose relative_to="__model__">0.019800000000000012 -0.039400000000000046 0.0793 0.0 -0.0 0.0</pose>
+      <parent>spider_mount_rear_1</parent>
+      <child>loop_closure_link_8</child>
+      <axis>
+        <xyz expressed_in="__model__">-0.9999999999999996 -0.0 -6.123233995736765e-17</xyz>
+      </axis>
+    </joint>
+    <plugin filename="libgz-sim-detachable-joint-system.so" name="gz::sim::systems::DetachableJoint">
+      <parent_link>suspension_arm_7</parent_link>
+      <child_link>loop_closure_link_8</child_link>
+      <child_model>__model__</child_model>
+      <attach_topic>loop_8/attach</attach_topic>
+      <detach_topic>loop_8/detach</detach_topic>
+      <output_topic>loop_8/state</output_topic>
+    </plugin>
+
+
+    <!-- Sensors -->
+    <link name="imu">
+      <pose>0.317 0 0.1 0 0 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <iyy>0.0000001</iyy>
+          <izz>0.0000001</izz>
+          <ixy>0</ixy>
+          <iyz>0</iyz>
+          <ixz>0</ixz>
+        </inertia>
+      </inertial>
+
+      <sensor name="imu" type="imu">
+        <always_on>1</always_on>
+        <update_rate>200</update_rate>
+        <visualize>false</visualize>
+        <topic>imu</topic>
+        <frame_id>imu</frame_id>
+        <imu>
+          <angular_velocity>
+            <x>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.01</stddev>
+                <dynamic_bias_stddev>0.001</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>300.0</dynamic_bias_correlation_time>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.01</stddev>
+                <dynamic_bias_stddev>0.001</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>300.0</dynamic_bias_correlation_time>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.01</stddev>
+                <dynamic_bias_stddev>0.001</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>300.0</dynamic_bias_correlation_time>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.02</stddev>
+                <dynamic_bias_stddev>0.002</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>300.0</dynamic_bias_correlation_time>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.02</stddev>
+                <dynamic_bias_stddev>0.002</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>300.0</dynamic_bias_correlation_time>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.02</stddev>
+                <dynamic_bias_stddev>0.002</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>300.0</dynamic_bias_correlation_time>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu>
+      </sensor>
+    </link>
+    <joint name="base_link_imu_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>imu</child>
+    </joint>
+
+    <link name="camera">
+      <pose>0.317 0 0.147 0 0.148353 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <iyy>0.0000001</iyy>
+          <izz>0.0000001</izz>
+          <ixy>0</ixy>
+          <iyz>0</iyz>
+          <ixz>0</ixz>
+        </inertia>
+      </inertial>
+      <sensor name="oak_d_pro_w_camera" type="rgbd_camera">
+        <camera>
+          <horizontal_fov>2.216568</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>800</height>
+          </image>
+
+          <clip>
+            <near>0.05</near>
+            <far>100</far>
+          </clip>
+
+          <distortion>
+            <k1>0.0</k1>
+            <k2>0.0</k2>
+            <k3>0.0</k3>
+            <p1>0.0</p1>
+            <p2>0.0</p2>
+            <center>0.5 0.5</center>
+          </distortion>
+
+          <noise>
+            <!-- As per specification, the depth error is <2% for distances below 3.5m. It is assumed that any depth measurements taken are below 3.5m -->
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.02</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <topic>camera</topic>
+        <frame_id>camera_optical</frame_id>
+      </sensor>
+    </link>
+    <joint name="base_link_camera_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>camera</child>
+    </joint>
+
+    <!-- Optical Frame of the camera with z-forward, x-left, y-up -->
+    <link name="camera_optical">
+      <pose relative_to="camera">0 0 0 -1.5708 0 -1.5708</pose>
+    </link>
+
+    <joint name="camera_optical_joint" type="fixed">
+      <parent>camera</parent>
+      <child>camera_optical</child>
+    </joint>
+
+    <!-- *********************** Sonar ************************  -->
+    <link name="sonar_mid_b">
+      <pose>-0.05 0 0.04 0 0 3.1415926535</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <iyy>0.0000001</iyy>
+          <izz>0.0000001</izz>
+          <ixy>0</ixy>
+          <iyz>0</iyz>
+          <ixz>0</ixz>
+        </inertia>
+      </inertial>
+      <visual name="sonar_mid_b_visual">
+        <geometry>
+          <box>
+            <size>0.02 0.005 0.03</size>
+          </box>
+        </geometry>
+      </visual>
+      <sensor name='sonar_mid_b_sensor' type='gpu_lidar'>
+        <always_on>1</always_on>
+        <frame_id>sonar_mid_b</frame_id>
+        <topic>/sonar_back_mid</topic>
+        <update_rate>10</update_rate>
+        <visualize>false</visualize>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.14835</min_angle>
+              <max_angle>0.14835</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.01</min>
+            <max>4</max>
+            <resolution>0.03</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </link>
+
+    <link name="sonar_lb">
+      <pose>-0.05 0.1 0.04 0 0 3.1415926535</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <iyy>0.0000001</iyy>
+          <izz>0.0000001</izz>
+          <ixy>0</ixy>
+          <iyz>0</iyz>
+          <ixz>0</ixz>
+        </inertia>
+      </inertial>
+      <visual name="sonar_lb_visual">
+        <geometry>
+          <box>
+            <size>0.02 0.005 0.03</size>
+          </box>
+        </geometry>
+      </visual>
+      <sensor name='sonar_lb_sensor' type='gpu_lidar'>
+        <always_on>1</always_on>
+        <frame_id>sonar_lb</frame_id>
+        <topic>/sonar_back_left</topic>
+        <update_rate>10</update_rate>
+        <visualize>false</visualize>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.14835</min_angle>
+              <max_angle>0.14835</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.01</min>
+            <max>4</max>
+            <resolution>0.03</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </link>
+
+    <link name="sonar_rb">
+      <pose>-0.05 -0.1 0.04 0 0 3.1415926535</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <iyy>0.0000001</iyy>
+          <izz>0.0000001</izz>
+          <ixy>0</ixy>
+          <iyz>0</iyz>
+          <ixz>0</ixz>
+        </inertia>
+      </inertial>
+      <visual name="sonar_rb_visual">
+        <geometry>
+          <box>
+            <size>0.02 0.005 0.03</size>
+          </box>
+        </geometry>
+      </visual>
+      <sensor name='sonar_rb_sensor' type='gpu_lidar'>
+        <always_on>1</always_on>
+        <frame_id>sonar_rb</frame_id>
+        <topic>/sonar_back_right</topic>
+        <update_rate>10</update_rate>
+        <visualize>false</visualize>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.14835</min_angle>
+              <max_angle>0.14835</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.01</min>
+            <max>4</max>
+            <resolution>0.03</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </link>
+
+    <link name="sonar_l">
+      <pose>0.3 0.14 0.04 0 0 1.5707963267948966</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <iyy>0.0000001</iyy>
+          <izz>0.0000001</izz>
+          <ixy>0</ixy>
+          <iyz>0</iyz>
+          <ixz>0</ixz>
+        </inertia>
+      </inertial>
+      <visual name="sonar_l_visual">
+        <geometry>
+          <box>
+            <size>0.02 0.005 0.03</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+      <sensor name='sonar_l_sensor' type='gpu_lidar'>
+        <pose >0 0 0 0 0 0</pose>
+        <always_on>1</always_on>
+        <frame_id>sonar_l</frame_id>
+        <topic>/sonar_left</topic>
+        <update_rate>10</update_rate>
+        <visualize>false</visualize>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.14835</min_angle>
+              <max_angle>0.14835</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.01</min>
+            <max>4</max>
+            <resolution>0.03</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </link>
+
+    <link name="sonar_r">
+      <pose>0.3 -0.14 0.04 0 0 -1.5707963267948966</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <iyy>0.0000001</iyy>
+          <izz>0.0000001</izz>
+          <ixy>0</ixy>
+          <iyz>0</iyz>
+          <ixz>0</ixz>
+        </inertia>
+      </inertial>
+      <visual name="sonar_r_visual">
+        <geometry>
+          <box>
+            <size>0.02 0.005 0.03</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+      <sensor name='sonar_r_sensor' type='gpu_lidar'>
+        <pose >0 0 0 0 0 0</pose>
+        <always_on>1</always_on>
+        <frame_id>sonar_r</frame_id>
+        <topic>/sonar_right</topic>
+        <update_rate>10</update_rate>
+        <visualize>false</visualize>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.14835</min_angle>
+              <max_angle>0.14835</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.01</min>
+            <max>4</max>
+            <resolution>0.03</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </link>
+
+    <!-- *********************** Lidar ************************  -->
+    <link name="lidar">
+      <!-- The model is tilted forward by about 1 degree because the mounting on the baseplate is tilted for the front wheels. -->
+      <!-- <pose>0.225 0 0.12 0 -0.01745329 0</pose> -->
+      <pose>0.225 0 0.12 0 0 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <iyy>0.0000001</iyy>
+          <izz>0.0000001</izz>
+          <ixy>0</ixy>
+          <iyz>0</iyz>
+          <ixz>0</ixz>
+        </inertia>
+      </inertial>
+      <visual name="lidar_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.04</radius>
+            <length>0.02</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <sensor name='lidar' type='gpu_lidar'>
+        <always_on>1</always_on>
+        <frame_id>lidar</frame_id>
+        <topic>lidar</topic>
+        <update_rate>10</update_rate>
+        <visualize>false</visualize>
+        <ray>
+          <scan>
+            <horizontal>
+              <!-- 360 degrees / 0.5 degrees = 720 samples -->
+              <samples>720</samples>
+              <resolution>1</resolution>
+              <!-- 360 degrees in radians: -pi to +pi -->
+              <min_angle>-3.14159265</min_angle>
+              <max_angle>3.14159265</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.15</min>
+            <max>16.0</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.02</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </link>
+
+    <joint name="base_link_sonar_l_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>sonar_l</child>
+    </joint>
+    <joint name="base_link_sonar_r_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>sonar_r</child>
+    </joint>
+    <joint name="base_link_sonar_mid_b" type="fixed">
+      <parent>base_link</parent>
+      <child>sonar_mid_b</child>
+    </joint>
+    <joint name="base_link_sonar_rb" type="fixed">
+      <parent>base_link</parent>
+      <child>sonar_rb</child>
+    </joint>
+    <joint name="base_link_sonar_lb" type="fixed">
+      <parent>base_link</parent>
+      <child>sonar_lb</child>
+    </joint>
+    <joint name="base_link_lidar" type="fixed">
+      <parent>base_link</parent>
+      <child>lidar</child>
+    </joint>
+
+    <link name="base_footprint">
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <iyy>0.0000001</iyy>
+          <izz>0.0000001</izz>
+          <ixy>0</ixy>
+          <iyz>0</iyz>
+          <ixz>0</ixz>
+        </inertia>
+    </inertial>
+    </link>
+    <joint name="base_footprint_joint" type="fixed">
+        <parent>base_link</parent>
+        <child>base_footprint</child>
+    </joint>
+    <!-- ROS2 Control Section -->
+    <!-- Used by the GazeboSimROS2ControlPlugin to spawn ros2_control nodes to interact with a ros2 environment -->
+    <ros2_control name="GazeboSimSystem" type="system">
+
+      <hardware>
+        <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+      </hardware>
+
+      <joint name="wheel_rear_left_joint">
+        <command_interface name="velocity">
+          <param name="min">-100</param>
+          <param name="max">100</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="wheel_rear_right_joint">
+        <command_interface name="velocity">
+          <param name="min">-100</param>
+          <param name="max">100</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="wheel_front_left_joint">
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="wheel_front_right_joint">
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="steering_left_joint">
+        <command_interface name="position">
+          <!-- 40 degrees -->
+          <param name="min">-0.7</param>
+          <param name="max">0.7</param>
+        </command_interface>
+        <state_interface name="position"/>
+      </joint>
+
+      <joint name="steering_right_joint">
+        <command_interface name="position">
+          <param name="min">-0.7</param>
+          <param name="max">0.7</param>
+        </command_interface>
+        <state_interface name="position"/>
+      </joint>
+
+    </ros2_control>
+
+    <plugin name="gz_ros2_control::GazeboSimROS2ControlPlugin" filename="/opt/ros/kilted/lib/libgz_ros2_control-system.so">
+      <parameters>/workspaces/glidar_slam_demo/src/demo_bringup/params/controllers-car-damped.yaml</parameters>
+    </plugin>
+
+    <plugin name="gz::sim::systems::PosePublisher" filename="gz-sim-pose-publisher-system">
+      <!-- Needed to get the exact position of the vehicle in the simulation. Used for evaluation of localization or similar. -->
+      <use_pose_vector_msg>true</use_pose_vector_msg>
+      <publish_model_pose>true</publish_model_pose>
+      <static_publisher>true</static_publisher>
+      <static_update_frequency>1</static_update_frequency>
+    </plugin>
+
+  </model>
+</sdf>

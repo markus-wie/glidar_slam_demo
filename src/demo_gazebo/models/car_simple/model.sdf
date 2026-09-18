@@ -1,0 +1,887 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.11">
+  <model name="assembly" canonical_link="base_link">
+    <link name="steering_1">
+      <pose relative_to="__model__">0.20811065164947518 0.09250000000000005 0.0388174569606781 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>2.6645352591003757e-15 0.0 0.010127262939405642 0.0 -0.0 0.0</pose>
+        <mass>0.02616699117871946</mass>
+        <inertia>
+          <ixx>4.862139769527449e-06</ixx>
+          <ixy>0.0</ixy>
+          <ixz>7.047314121155779e-19</ixz>
+          <iyy>4.879150970126542e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.742739448382322e-06</izz>
+        </inertia>
+      </inertial>
+      <visual name="steering_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_simple/meshes/steering_1/steering_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="steering_2">
+      <pose relative_to="__model__">0.2081106516494752 -0.09250000000000007 0.0388174569606781 0.0 -0.0 3.141592653589793</pose>
+      <inertial>
+        <pose>2.653207276208263e-15 2.2693712745292757e-18 0.010127262939405642 0.0 -0.0 -3.141592653589793</pose>
+        <mass>0.02616699117871946</mass>
+        <inertia>
+          <ixx>4.862139769527395e-06</ixx>
+          <ixy>1.0842021724855044e-19</ixy>
+          <ixz>-7.589415207398531e-19</ixz>
+          <iyy>4.879150970126542e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7427394483825387e-06</izz>
+        </inertia>
+      </inertial>
+      <visual name="steering_2_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_simple/meshes/steering_1/steering_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="base_link">
+      <inertial>
+        <pose>0.00908187316958338 -3.499674180010603e-13 0.10164671993074452 0.0 -0.0 0.0</pose>
+        <mass>19.80148622619975</mass>
+        <inertia>
+          <ixx>0.26989759091505694</ixx>
+          <ixy>-1.002164318989699e-12</ixy>
+          <ixz>0.00678340077073669</ixz>
+          <iyy>0.5503038079613211</iyy>
+          <iyz>-3.8007693929675386e-13</iyz>
+          <izz>0.6758768930697061</izz>
+        </inertia>
+      </inertial>
+      <visual name="base_link_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_simple/meshes/chassis_1/chassis_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="base_link_collision">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_simple/meshes/chassis_1/chassis_1.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <link name="wheel_1">
+      <pose relative_to="__model__">0.20811065164947518 0.12500000000000006 0.03881745696067811 0.0 -0.0 0.0</pose>
+      <inertial>
+        <mass>0.16085617568158378</mass>
+        <inertia>
+          <ixx>0.00019198009335207305</ixx>
+          <ixy>-8.673617379884035e-19</ixy>
+          <ixz>2.168404344971009e-19</ixz>
+          <iyy>0.0003204934622038063</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.00019198009335207912</izz>
+        </inertia>
+      </inertial>
+      <visual name="wheel_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_simple/meshes/wheel_1/wheel_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="wheel_track_1_collision">
+        <geometry>
+          <sphere>
+            <radius>0.055</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+            <torsional>
+              <coefficient>0.0</coefficient>
+              <use_patch_radius>true</use_patch_radius>
+              <patch_radius>0.01</patch_radius>
+            </torsional>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <link name="wheel_2">
+      <pose relative_to="__model__">0.2081106516494752 -0.12500000000000008 0.03881745696067811 0.0 -0.0 3.141592653589793</pose>
+      <inertial>
+        <pose>6.795864185754482e-17 2.2693712745289552e-18 4.163336342344337e-17 0.0 -0.0 -3.141592653589793</pose>
+        <mass>0.16085617568158378</mass>
+        <inertia>
+          <ixx>0.00019198009335207131</ixx>
+          <ixy>0.0</ixy>
+          <ixz>-6.505213034913027e-19</ixz>
+          <iyy>0.00032049346220380717</iyy>
+          <iyz>-3.2526065174565133e-19</iyz>
+          <izz>0.00019198009335207565</izz>
+        </inertia>
+      </inertial>
+      <visual name="wheel_2_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_simple/meshes/wheel_1/wheel_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="wheel_track_1_collision">
+        <geometry>
+          <sphere>
+            <radius>0.055</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+            <torsional>
+              <coefficient>0.0</coefficient>
+              <use_patch_radius>true</use_patch_radius>
+              <patch_radius>0.01</patch_radius>
+            </torsional>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <link name="wheel_3">
+      <pose relative_to="__model__">-0.15188934835052526 0.12499999999999989 0.03881745696067811 0.0 -0.0 0.0</pose>
+      <inertial>
+        <mass>0.16085617568158378</mass>
+        <inertia>
+          <ixx>0.00019198009335207131</ixx>
+          <ixy>-4.336808689942018e-19</ixy>
+          <ixz>6.505213034913027e-19</ixz>
+          <iyy>0.00032049346220380717</iyy>
+          <iyz>2.168404344971009e-19</iyz>
+          <izz>0.00019198009335207652</izz>
+        </inertia>
+      </inertial>
+      <visual name="wheel_3_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_simple/meshes/wheel_1/wheel_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="wheel_track_1_collision">
+        <geometry>
+          <sphere>
+            <radius>0.055</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+            <torsional>
+              <coefficient>0.0</coefficient>
+              <use_patch_radius>true</use_patch_radius>
+              <patch_radius>0.01</patch_radius>
+            </torsional>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <link name="wheel_4">
+      <pose relative_to="__model__">-0.15188934835052492 -0.12499999999999986 0.03881745696067809 3.141592653589793 -0.0 2.842170943040429e-15</pose>
+      <inertial>
+        <pose>6.106226635438048e-17 3.269697044834125e-18 4.306366060497076e-17 -3.141592653589793 -3.4806555480240754e-31 2.842170943040429e-15</pose>
+        <mass>0.16085617568158378</mass>
+        <inertia>
+          <ixx>0.00019198009335207175</ixx>
+          <ixy>0.0</ixy>
+          <ixz>-5.421010862427522e-19</ixz>
+          <iyy>0.0003204934622038063</iyy>
+          <iyz>1.0842021724855044e-19</iyz>
+          <izz>0.00019198009335207652</izz>
+        </inertia>
+      </inertial>
+      <visual name="wheel_4_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_simple/meshes/wheel_1/wheel_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="wheel_track_1_collision">
+        <geometry>
+          <sphere>
+            <radius>0.055</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+            <torsional>
+              <coefficient>0.0</coefficient>
+              <use_patch_radius>true</use_patch_radius>
+              <patch_radius>0.01</patch_radius>
+            </torsional>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <link name="lidar_1">
+      <pose relative_to="__model__">0.28492985648815855 7.105427357601002e-17 0.025 0.0 -0.0 0.0</pose>
+      <inertial>
+        <mass>0.14904845884791385</mass>
+        <inertia>
+          <ixx>6.63880330469742e-05</ixx>
+          <ixy>4.820321919396535e-20</ixy>
+          <ixz>0.0</ixz>
+          <iyy>6.638803304697544e-05</iyy>
+          <iyz>-1.2050804798491242e-20</iyz>
+          <izz>0.00011236547436398875</izz>
+        </inertia>
+      </inertial>
+      <visual name="lidar_1_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://demo_gazebo/models/car_simple/meshes/lidar_1/lidar_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="wheel_front_left_joint" type="revolute">
+      <pose relative_to="__model__">0.20811065164947518 0.10500000000000005 0.0388174569606781 0.0 -0.0 0.0</pose>
+      <parent>steering_1</parent>
+      <child>wheel_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0.0 1.0 0.0</xyz>
+      </axis>
+    </joint>
+    <joint name="wheel_front_right_joint" type="revolute">
+      <pose relative_to="__model__">0.2081106516494752 -0.10500000000000007 0.0388174569606781 0.0 -0.0 0.0</pose>
+      <parent>steering_2</parent>
+      <child>wheel_2</child>
+      <axis>
+        <xyz expressed_in="__model__">3.041375384897609e-16 1.0 0.0</xyz>
+      </axis>
+    </joint>
+    <joint name="steering_left_joint" type="revolute">
+      <pose relative_to="__model__">0.20811065164947518 0.09250000000000005 0.0288174569606781 0.0 -0.0 0.0</pose>
+      <parent>base_link</parent>
+      <child>steering_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0.0 0.0 1.0</xyz>
+      </axis>
+    </joint>
+    <joint name="steering_right_joint" type="revolute">
+      <pose relative_to="__model__">0.20811065164947518 -0.09250000000000005 0.0288174569606781 0.0 -0.0 0.0</pose>
+      <parent>base_link</parent>
+      <child>steering_2</child>
+      <axis>
+        <xyz expressed_in="__model__">0.0 0.0 1.0</xyz>
+      </axis>
+    </joint>
+    <joint name="wheel_rear_left_joint" type="revolute">
+      <pose relative_to="__model__">-0.15188934835052526 0.10499999999999993 0.0388174569606781 0.0 -0.0 0.0</pose>
+      <parent>base_link</parent>
+      <child>wheel_3</child>
+      <axis>
+        <xyz expressed_in="__model__">0.0 1.0 0.0</xyz>
+      </axis>
+    </joint>
+    <joint name="wheel_rear_right_joint" type="revolute">
+      <pose relative_to="__model__">-0.15188934835052495 -0.1049999999999999 0.0388174569606781 0.0 -0.0 0.0</pose>
+      <parent>base_link</parent>
+      <child>wheel_4</child>
+      <axis>
+        <xyz expressed_in="__model__">-1.4210854715202145e-15 1.0 0.0</xyz>
+      </axis>
+    </joint>
+    <joint name="lidar_joint" type="fixed">
+      <pose relative_to="__model__">0.28492985648815855 -1.7763568394002505e-17 0.04 0.0 -0.0 0.0</pose>
+      <parent>base_link</parent>
+      <child>lidar_1</child>
+      <axis />
+    </joint>
+  
+    <!-- Sensors -->
+    <link name="camera">
+      <pose>0.1 0 0.225 0 0.148353 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <iyy>0.0000001</iyy>
+          <izz>0.0000001</izz>
+          <ixy>0</ixy>
+          <iyz>0</iyz>
+          <ixz>0</ixz>
+        </inertia>
+      </inertial>
+      <sensor name="oak_d_pro_w_camera" type="rgbd_camera">
+        <camera>
+          <horizontal_fov>2.216568</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>800</height>
+          </image>
+
+          <clip>
+            <near>0.05</near>
+            <far>100</far>
+          </clip>
+
+          <distortion>
+            <k1>0.0</k1>
+            <k2>0.0</k2>
+            <k3>0.0</k3>
+            <p1>0.0</p1>
+            <p2>0.0</p2>
+            <center>0.5 0.5</center>
+          </distortion>
+
+            <!-- As per specification, the depth error is <2% for distances below 3.5m. It is assumed that any depth measurements taken are below 3.5m -->
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.03</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <topic>camera</topic>
+        <frame_id>camera_optical</frame_id>
+      </sensor>
+    </link>
+
+    <joint name="base_link_camera_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>camera</child>
+    </joint>
+
+    <link name="camera_optical">
+      <pose relative_to="camera">0 0 0 -1.5708 0 -1.5708</pose>
+    </link>
+
+    <joint name="camera_optical_joint" type="fixed">
+      <parent>camera</parent>
+      <child>camera_optical</child>
+    </joint>
+
+    <link name="imu">
+      <pose>0.1 0 0.2 0 0 0</pose>
+      <kinematic>true</kinematic>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <iyy>0.0000001</iyy>
+          <izz>0.0000001</izz>
+          <ixy>0</ixy>
+          <iyz>0</iyz>
+          <ixz>0</ixz>
+        </inertia>
+      </inertial>
+
+      <sensor name="imu" type="imu">
+        <always_on>1</always_on>
+        <update_rate>200</update_rate>
+        <visualize>false</visualize>
+        <topic>imu</topic>
+        <frame_id>imu</frame_id>
+        <imu>
+          <angular_velocity>
+            <x>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.05</stddev>
+                <dynamic_bias_stddev>0.0005</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>300.0</dynamic_bias_correlation_time>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.05</stddev>
+                <dynamic_bias_stddev>0.0005</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>300.0</dynamic_bias_correlation_time>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.05</stddev>
+                <dynamic_bias_stddev>0.0005</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>300.0</dynamic_bias_correlation_time>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.05</stddev>
+                <dynamic_bias_stddev>0.002</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>300.0</dynamic_bias_correlation_time>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.05</stddev>
+                <dynamic_bias_stddev>0.002</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>300.0</dynamic_bias_correlation_time>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.05</stddev>
+                <dynamic_bias_stddev>0.002</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>300.0</dynamic_bias_correlation_time>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu>
+      </sensor>
+    </link>
+
+    <joint name="base_link_imu_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>imu</child>
+    </joint>
+
+    <!-- *********************** Sonar ************************  -->
+    <link name="sonar_mid_b">
+      <pose>-0.27 0 0.04 0 0 3.1415926535</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <iyy>0.0000001</iyy>
+          <izz>0.0000001</izz>
+          <ixy>0</ixy>
+          <iyz>0</iyz>
+          <ixz>0</ixz>
+        </inertia>
+      </inertial>
+      <visual name="sonar_mid_b_visual">
+        <geometry>
+          <box>
+            <size>0.02 0.005 0.03</size>
+          </box>
+        </geometry>
+      </visual>
+      <sensor name='sonar_mid_b_sensor' type='gpu_lidar'>
+        <always_on>1</always_on>
+        <frame_id>sonar_mid_b</frame_id>
+        <topic>/sonar_back_mid</topic>
+        <update_rate>10</update_rate>
+        <visualize>false</visualize>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.14835</min_angle>
+              <max_angle>0.14835</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.01</min>
+            <max>4</max>
+            <resolution>0.03</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </link>
+
+    <link name="sonar_lb">
+      <pose>-0.27 0.1 0.04 0 0 3.1415926535</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <iyy>0.0000001</iyy>
+          <izz>0.0000001</izz>
+          <ixy>0</ixy>
+          <iyz>0</iyz>
+          <ixz>0</ixz>
+        </inertia>
+      </inertial>
+      <visual name="sonar_lb_visual">
+        <geometry>
+          <box>
+            <size>0.02 0.005 0.03</size>
+          </box>
+        </geometry>
+      </visual>
+      <sensor name='sonar_lb_sensor' type='gpu_lidar'>
+        <always_on>1</always_on>
+        <frame_id>sonar_lb</frame_id>
+        <topic>/sonar_back_left</topic>
+        <update_rate>10</update_rate>
+        <visualize>false</visualize>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.14835</min_angle>
+              <max_angle>0.14835</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.01</min>
+            <max>4</max>
+            <resolution>0.03</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </link>
+
+    <link name="sonar_rb">
+      <pose>-0.27 -0.1 0.04 0 0 3.1415926535</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <iyy>0.0000001</iyy>
+          <izz>0.0000001</izz>
+          <ixy>0</ixy>
+          <iyz>0</iyz>
+          <ixz>0</ixz>
+        </inertia>
+      </inertial>
+      <visual name="sonar_rb_visual">
+        <geometry>
+          <box>
+            <size>0.02 0.005 0.03</size>
+          </box>
+        </geometry>
+      </visual>
+      <sensor name='sonar_rb_sensor' type='gpu_lidar'>
+        <always_on>1</always_on>
+        <frame_id>sonar_rb</frame_id>
+        <topic>/sonar_back_right</topic>
+        <update_rate>10</update_rate>
+        <visualize>false</visualize>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.14835</min_angle>
+              <max_angle>0.14835</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.01</min>
+            <max>4</max>
+            <resolution>0.03</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </link>
+
+    <link name="sonar_l">
+      <pose>0.12 0.15 0.04 0 0 1.5707963267948966</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <iyy>0.0000001</iyy>
+          <izz>0.0000001</izz>
+          <ixy>0</ixy>
+          <iyz>0</iyz>
+          <ixz>0</ixz>
+        </inertia>
+      </inertial>
+      <visual name="sonar_l_visual">
+        <geometry>
+          <box>
+            <size>0.02 0.005 0.03</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+      <sensor name='sonar_l_sensor' type='gpu_lidar'>
+        <pose >0 0 0 0 0 0</pose>
+        <always_on>1</always_on>
+        <frame_id>sonar_l</frame_id>
+        <topic>/sonar_left</topic>
+        <update_rate>10</update_rate>
+        <visualize>false</visualize>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.14835</min_angle>
+              <max_angle>0.14835</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.01</min>
+            <max>4</max>
+            <resolution>0.03</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </link>
+
+    <link name="sonar_r">
+      <pose>0.12 -0.15 0.04 0 0 -1.5707963267948966</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <iyy>0.0000001</iyy>
+          <izz>0.0000001</izz>
+          <ixy>0</ixy>
+          <iyz>0</iyz>
+          <ixz>0</ixz>
+        </inertia>
+      </inertial>
+      <visual name="sonar_r_visual">
+        <geometry>
+          <box>
+            <size>0.02 0.005 0.03</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+      <sensor name='sonar_r_sensor' type='gpu_lidar'>
+        <pose >0 0 0 0 0 0</pose>
+        <always_on>1</always_on>
+        <frame_id>sonar_r</frame_id>
+        <topic>/sonar_right</topic>
+        <update_rate>10</update_rate>
+        <visualize>false</visualize>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.14835</min_angle>
+              <max_angle>0.14835</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.01</min>
+            <max>4</max>
+            <resolution>0.03</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </link>
+
+    <!-- *********************** Lidar ************************  -->
+    <link name="lidar">
+      <pose>0.3 0 0.05 0 0 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <iyy>0.0000001</iyy>
+          <izz>0.0000001</izz>
+          <ixy>0</ixy>
+          <iyz>0</iyz>
+          <ixz>0</ixz>
+        </inertia>
+      </inertial>
+      <visual name="lidar_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.04</radius>
+            <length>0.02</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <sensor name='lidar' type='gpu_lidar'>
+        <!-- Rotate the lidar 180 degree roll, to produce CW data instead of CCW -->
+        <!-- Rotate 180 degree yaw to make it look "forward" -->
+        <always_on>1</always_on>
+        <frame_id>lidar</frame_id>
+        <topic>lidar</topic>
+        <update_rate>10</update_rate>
+        <visualize>false</visualize>
+        <ray>
+          <scan>
+            <horizontal>
+              <!-- 360 degrees / 0.5 degrees = 720 samples -->
+              <samples>720</samples>
+              <resolution>1</resolution>
+              <!-- 360 degrees in radians: -pi to +pi -->
+              <min_angle>-3.14159265</min_angle>
+              <max_angle>3.14159265</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.15</min>
+            <max>12.0</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.03</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </link>
+
+    <joint name="base_link_sonar_l_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>sonar_l</child>
+    </joint>
+    <joint name="base_link_sonar_r_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>sonar_r</child>
+    </joint>
+    <joint name="base_link_sonar_mid_b" type="fixed">
+      <parent>base_link</parent>
+      <child>sonar_mid_b</child>
+    </joint>
+    <joint name="base_link_sonar_rb" type="fixed">
+      <parent>base_link</parent>
+      <child>sonar_rb</child>
+    </joint>
+    <joint name="base_link_sonar_lb" type="fixed">
+      <parent>base_link</parent>
+      <child>sonar_lb</child>
+    </joint>
+    <joint name="base_link_lidar" type="fixed">
+      <parent>base_link</parent>
+      <child>lidar</child>
+    </joint>
+
+    <link name="base_footprint">
+    </link>
+    <joint name="base_footprint_joint" type="fixed">
+        <parent>base_link</parent>
+        <child>base_footprint</child>
+    </joint>
+
+    <!-- ROS2 Control Section -->
+    <!-- Used by the GazeboSimROS2ControlPlugin to spawn ros2_control nodes to interact with a ros2 environment -->
+    <ros2_control name="GazeboSimSystem" type="system">
+
+      <hardware>
+        <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+      </hardware>
+
+      <joint name="wheel_rear_left_joint">
+        <command_interface name="velocity">
+          <param name="min">-100</param>
+          <param name="max">100</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="wheel_rear_right_joint">
+        <command_interface name="velocity">
+          <param name="min">-100</param>
+          <param name="max">100</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="wheel_front_left_joint">
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="wheel_front_right_joint">
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="steering_left_joint">
+        <command_interface name="position">
+          <param name="min">-1.785</param>
+          <param name="max">1.785</param>
+        </command_interface>
+        <state_interface name="position"/>
+      </joint>
+
+      <joint name="steering_right_joint">
+        <command_interface name="position">
+          <param name="min">-1.785</param>
+          <param name="max">1.785</param>
+        </command_interface>
+        <state_interface name="position"/>
+      </joint>
+
+    </ros2_control>
+    <plugin name="gz_ros2_control::GazeboSimROS2ControlPlugin" filename="/opt/ros/kilted/lib/libgz_ros2_control-system.so">
+      <parameters>/workspaces/glidar_slam_demo/src/demo_bringup/params/controllers-car-simple.yaml</parameters>
+    </plugin>
+
+    <plugin name="gz::sim::systems::PosePublisher" filename="gz-sim-pose-publisher-system">
+      <!-- Needed to get the exact position of the vehicle in the simulation. Used for evaluation of localization or similar. -->
+      <use_pose_vector_msg>true</use_pose_vector_msg>
+      <publish_model_pose>true</publish_model_pose>
+      <static_publisher>true</static_publisher>
+      <static_update_frequency>1</static_update_frequency>
+    </plugin>
+
+  </model>
+</sdf>
