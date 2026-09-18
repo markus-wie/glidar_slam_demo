@@ -1,0 +1,65 @@
+{
+    // CMake Tools
+    "cmake.configureOnOpen": false,
+    "cmake.configureOnEdit": false,
+    // C/C++ (Default IntelliSense)
+    "C_Cpp.intelliSenseEngine": "default",
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/build/Release/compile_commands.json",
+    // C++ 
+    "editor.semanticHighlighting.enabled": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": true,
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools",
+        "editor.formatOnSave": true
+    },
+    // JSON
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features",
+        "editor.formatOnSave": true
+    },
+    // Python
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportUnusedVariable": "none",
+        "reportMissingTypeStubs": "none",
+        "reportGeneralTypeIssues": "none",
+        "reportUndefinedVariable": "none"
+    },
+    "python.analysis.extraPaths": [
+        "/opt/ros/kilted/lib/python3.12/site-packages",
+        "${workspaceFolder}/install/lib/python3.12/site-packages"
+    ],
+    "python.analysis.exclude": [
+        "**/.*",
+        "**/.venv/**",
+        "**/node_modules",
+        "**/__pycache__",
+        "**/env",
+        "**/build",
+        "**/install",
+        "**/log",
+        "**/bags"
+    ],
+    "python.analysis.include": [
+        ".devcontainer/**/*",
+        ".gitlab/**/*",
+    ],
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/kilted/lib/python3.12/site-packages"
+    ],
+    "ROS2.distro": "kilted",
+    "files.watcherExclude": {
+        "**/.venv/**": true
+    },
+    "search.exclude": {
+        "**/.venv/**": true
+    },
+}
