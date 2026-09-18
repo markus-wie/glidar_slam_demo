@@ -1,0 +1,16 @@
+# Parameters for a multiplexer for different cmd_vel sources
+#
+# To allow multiple sources of driving instructions (for example, our own trajectory planner, nav2, or manual control), we use a multiplexer to combine them.
+# The input topics are assigned priorities based on which the multiplexer forwards the messages to the "/cmd_vel_out" topic.
+
+twist_mux:
+  ros__parameters:
+    topics:
+      navigation:
+        topic: "/cmd_vel"
+        priority: 100
+        timeout: 0.5
+      manual:
+        topic: "/cmd_vel_demo"
+        priority: 10
+        timeout: 0.5

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>demo_bringup</name>
+  <version>1.0.0</version>
+  <description>Contains launch files</description>
+  <maintainer email="markus.wiechers@hm.edu">Markus Wiechers</maintainer>
+  <author>Markus Wiechers</author>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>joint_state_publisher_gui</depend>
+  <depend>sdformat_urdf</depend>
+  <depend>launch</depend>
+  <depend>launch_ros</depend>
+  <depend>ros2_control</depend>
+  <depend>ackermann_steering_controller</depend>
+  <depend>joint_state_broadcaster</depend>
+  <depend>gz_ros2_control</depend>
+  <depend>rqt_robot_monitor</depend>
+  <depend>rqt_runtime_monitor</depend>
+  <depend>rqt_plot</depend>
+  <depend>rqt_controller_manager</depend>
+  <depend>twist_mux</depend>
+  <depend>diagnostic_updater</depend>
+  <depend>robot_localization</depend>
+
+  <depend>slam_toolbox</depend>
+
+  <depend>rtabmap</depend>
+  <depend>rtabmap_slam</depend>
+  <depend>rtabmap_viz</depend>
+
+  <depend>navigation2</depend>
+  <depend>nav2_bringup</depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

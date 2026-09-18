@@ -1,0 +1,47 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 50
+    
+    ackermann_steering_controller:
+      type: ackermann_steering_controller/AckermannSteeringController
+      
+    joint_state_broadcaster:
+      # Just a listener on state interfaces that describe the motion of the robots joints, and publishes them as a sensor_msgs/JointState message.
+      # This message is subscribed by the robot_state_publisher node to publish the transforms of the robot's links using tf2
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+ackermann_steering_controller:
+  ros__parameters:
+    type: 'ackermann_steering_controller/AckermannSteeringController'
+    # Distance between the front and rear axles of the vehicle in meters
+    wheelbase: 0.36
+    # The distance between the left and right wheels of the vehicle in meters
+    traction_track_width: 0.26
+    steering_track_width: 0.26
+    # the radii of the front and rear wheels in meters
+    # You can choose radii that are a bit off to artifically introduce drift, which is advisable in simulation
+    traction_wheels_radius: 0.048
+    steering_wheels_radius: 0.048
+    # In s. Timeout to stop if no cmd_vel is received
+    reference_timeout: 1.0
+    # Joint names. Must match the names in the URDF robot description!
+    traction_joints_names: ['wheel_rear_right_joint', 'wheel_rear_left_joint']
+    steering_joints_names: ['steering_right_joint', 'steering_left_joint']
+    # Whether the controller calculates the odometry from a open or closed loop 
+    # We get hardware feedback from the wheel encoders, so we have a closed loop
+    # Open loop would use the control commands to blindly integrate the odometry
+    open_loop: false
+    velocity_rolling_window_size: 10
+    base_frame_id: base_link
+    odom_frame_id: odom
+    # If set to true, the controller will publish a transform between the odom and base_link frames. Depending on the controller, this is not necessarily on the /tf topic
+    enable_odom_tf: true
+    # [vx, vy, vz, vroll, vpitch, vyaw] A ackermann model only has vx and vyaw, since it is not holonomic
+    twist_covariance_diagonal: [0.01, 1.0e-6, 1.0e-6, 1.0e-6, 1.0e-6, 0.05]
+    # [x, y, z, roll, pitch, yaw] The pose, however, accumulates over time in x,y and yaw.
+    pose_covariance_diagonal: [0.1, 0.1, 1.0e-6, 1.0e-6, 1.0e-6, 0.02]
+    # The position_feedback parameter dictates which hardware state interface the controller reads to calculate the forward displacement of the traction wheels
+    # true: the controller reads the position state interface, which is the accumulated position of the traction wheels
+    # false: the controller reads the velocity state interface, which is the current velocity of the traction wheels
+    position_feedback: false
+    publish_rate: 50.0
