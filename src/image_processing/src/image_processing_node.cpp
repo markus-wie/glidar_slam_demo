@@ -82,8 +82,9 @@ ImageProcessingNode::ImageProcessingNode(const rclcpp::NodeOptions & options)
   m_cameraSynchronizer =
     std::make_shared<message_filters::Synchronizer<CameraSyncPolicy>>(CameraSyncPolicy(10));
   m_cameraSynchronizer->connectInput(m_cameraImageSubscriber, m_cameraInfoSubscriber);
-  m_cameraSynchronizer->registerCallback(std::bind(
-    &ImageProcessingNode::cameraCallback, this, std::placeholders::_1, std::placeholders::_2));
+  m_cameraSynchronizer->registerCallback(
+    std::bind(
+      &ImageProcessingNode::cameraCallback, this, std::placeholders::_1, std::placeholders::_2));
 
   // Parameters Callback
   callback_handle_ = this->add_on_set_parameters_callback(

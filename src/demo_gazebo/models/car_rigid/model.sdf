@@ -998,7 +998,7 @@
 
     </ros2_control>
 
-    <plugin name="gz_ros2_control::GazeboSimROS2ControlPlugin" filename="/opt/ros/kilted/lib/libgz_ros2_control-system.so">
+    <plugin name="gz_ros2_control::GazeboSimROS2ControlPlugin" filename="libgz_ros2_control-system.so">
       <parameters>/workspaces/glidar_slam_demo/src/demo_bringup/params/controllers-car-damped.yaml</parameters>
     </plugin>
 

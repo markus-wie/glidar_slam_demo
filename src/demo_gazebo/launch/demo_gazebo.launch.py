@@ -11,6 +11,8 @@ from launch.actions import (
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
+from ros_gz_bridge.actions import RosGzBridge
+from ros_gz_sim.actions import GzServer
 import xacro
 
 CAR_TYPES = {"car_damped", "car_rigid", "car_simple"}
@@ -45,9 +47,6 @@ def launch_gazebo(context, *args, **kwargs):
 
     pkg_ros_gz_sim = get_package_share_directory("ros_gz_sim")
 
-    # Mockup for ros_gz_sim.launch.py under kilted
-    ros_gz_sim_mockup_dir = get_package_share_directory("demo_gazebo")
-
     gz_sim_gui = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_ros_gz_sim, "launch", "gz_sim.launch.py")
@@ -67,24 +66,27 @@ def launch_gazebo(context, *args, **kwargs):
         }.items(),
     )
 
-    gz_sim_server_and_bridge = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(ros_gz_sim_mockup_dir, "launch", "ros_gz_sim.launch.py")
-        ),
-        launch_arguments={
-            "use_composition": "true",
-            "bridge_name": "gz_bridge",
-            "config_file": os.path.join(demo_gazebo_dir, "config", "bridge.yaml"),
-            # by not overriding container_name, the argument set by a top level launch file is used.
-            # set create_own_container to false to attach to the container launched by the top level launch file instead of creating a new one.
-            # "container_name": "ros_gz_container",
-            "create_own_container": "false",
-            "bridge_log_level": "info",
-            "world_sdf_file": generated_world_sdf_file,
-        }.items(),
+    # The container_name is set by the top level launch file. Not creating an own container
+    # attaches the server and the bridge to that container.
+    container_name = LaunchConfiguration("container_name")
+
+    gz_server = GzServer(
+        world_sdf_file=generated_world_sdf_file,
+        container_name=container_name,
+        create_own_container="false",
+        use_composition="true",
     )
 
-    return [gz_sim_server_and_bridge, gz_sim_gui]
+    gz_bridge = RosGzBridge(
+        bridge_name="gz_bridge",
+        config_file=os.path.join(demo_gazebo_dir, "config", "bridge.yaml"),
+        container_name=container_name,
+        create_own_container="false",
+        use_composition="true",
+        log_level="info",
+    )
+
+    return [gz_server, gz_bridge, gz_sim_gui]
 
 
 def generate_launch_description():
@@ -99,6 +101,11 @@ def generate_launch_description():
                 "course_type",
                 default_value="course_short_complex_corridor",
                 description="Course model (course_complex_corridor|course_long|course_small|course_short_complex_corridor)",
+            ),
+            DeclareLaunchArgument(
+                "container_name",
+                default_value="ros_gz_container",
+                description="Name of the component container the Gazebo server and bridge load into",
             ),
             OpaqueFunction(function=launch_gazebo),
         ]

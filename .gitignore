@@ -7,6 +7,8 @@
 .ccache
 /rosdep
 /core
+/bagfiles
+/eval
 
 # vscode
 /.vscode/c_cpp_properties.json

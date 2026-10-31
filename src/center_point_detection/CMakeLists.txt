@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.18)
 project(center_point_detection)
 
+cmake_policy(SET CMP0167 NEW)
+
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
@@ -15,7 +17,7 @@ find_package(std_msgs REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(image_transport REQUIRED)
-find_package(Boost REQUIRED)
+find_package(Boost CONFIG REQUIRED)
 
 include_directories(include)
 
@@ -26,6 +28,7 @@ add_library(center_point_detection_node SHARED
 )
 
 target_link_libraries(center_point_detection_node PUBLIC
+  Boost::headers
   ${demo_msgs_TARGETS}
   ${sensor_msgs_TARGETS}
   ${std_msgs_TARGETS}

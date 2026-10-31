@@ -42,7 +42,7 @@ private:
       parameters[0].get_name().c_str(), parameters[0].value_to_string().c_str());
 
     rcl_interfaces::msg::SetParametersResult result;
-    result.successful = false;
+    result.successful = true;
     result.reason = "";
 
     for (const auto & param : parameters) {
@@ -55,7 +55,7 @@ private:
         result.successful = false;
         result.reason = "Invalid parameter or type";
         RCLCPP_WARN(
-          this->get_logger(), "center_point_detection: Could not set parameter %s",
+          this->get_logger(), "mission_controller: Could not set parameter %s",
           param.get_name().c_str());
         break;
       }

@@ -71,6 +71,8 @@ def launch_control(context, *args, **kwargs):
             "30",
             "--switch-timeout",
             "30",
+            "--param-file",
+            controllers_file,
         ],
         output="screen",
         parameters=[
@@ -91,6 +93,8 @@ def launch_control(context, *args, **kwargs):
             "30",
             "--switch-timeout",
             "30",
+            "--param-file",
+            controllers_file,
         ],
         output="screen",
         parameters=[

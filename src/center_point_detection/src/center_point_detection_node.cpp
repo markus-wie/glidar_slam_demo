@@ -73,13 +73,14 @@ void CenterPointDetection::lsdLinesCb(const demo_msgs::msg::LSDandImage & msg)
     lines.reserve(msg.lines.detected_lines.size());
 
     for (const demo_msgs::msg::Line & seg : msg.lines.detected_lines) {
-      lines.push_back(LineSegment2d{
-        cv::Point2d(
-          (seg.x1 - m_params.m_roiX / 2.0) / (m_params.m_roiY / 2.0),
-          2.0 - seg.y1 / (m_params.m_roiY / 2.0)),
-        cv::Point2d(
-          (seg.x2 - m_params.m_roiX / 2.0) / (m_params.m_roiY / 2.0),
-          2.0 - seg.y2 / (m_params.m_roiY / 2.0))});
+      lines.push_back(
+        LineSegment2d{
+          cv::Point2d(
+            (seg.x1 - m_params.m_roiX / 2.0) / (m_params.m_roiY / 2.0),
+            2.0 - seg.y1 / (m_params.m_roiY / 2.0)),
+          cv::Point2d(
+            (seg.x2 - m_params.m_roiX / 2.0) / (m_params.m_roiY / 2.0),
+            2.0 - seg.y2 / (m_params.m_roiY / 2.0))});
     }
 
     demo_msgs::msg::LanePoints centerPoints;

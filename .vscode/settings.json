@@ -34,7 +34,7 @@
         "reportUndefinedVariable": "none"
     },
     "python.analysis.extraPaths": [
-        "/opt/ros/kilted/lib/python3.12/site-packages",
+        "/opt/ros/lyrical/lib/python3.14/site-packages",
         "${workspaceFolder}/install/lib/python3.12/site-packages"
     ],
     "python.analysis.exclude": [
@@ -53,13 +53,14 @@
         ".gitlab/**/*",
     ],
     "python.autoComplete.extraPaths": [
-        "/opt/ros/kilted/lib/python3.12/site-packages"
+        "/opt/ros/lyrical/lib/python3.14/site-packages"
     ],
-    "ROS2.distro": "kilted",
+    "ROS2.distro": "lyrical",
     "files.watcherExclude": {
         "**/.venv/**": true
     },
     "search.exclude": {
         "**/.venv/**": true
     },
+    "python-envs.defaultEnvManager": "ms-python.python:system",
 }

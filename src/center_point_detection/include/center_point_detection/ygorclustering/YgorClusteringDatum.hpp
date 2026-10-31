@@ -240,9 +240,10 @@ struct access<
     UserDataClass>,
   ElementNumber>
 {
-  static inline SpatialType get(const ClusteringDatum<
-                                SpatialDimensionCount, SpatialType, AttributeDimensionCount,
-                                AttributeType, ClusterIDType, UserDataClass> & in)
+  static inline SpatialType get(
+    const ClusteringDatum<
+      SpatialDimensionCount, SpatialType, AttributeDimensionCount, AttributeType, ClusterIDType,
+      UserDataClass> & in)
   {
     return std::get<ElementNumber>(in.Coordinates);
     // Note: could use static template methods to include the Attributes as 'higher spatial

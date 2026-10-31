@@ -44,7 +44,7 @@ On a Linux host, build the image from the repository root:
 ```bash
 docker build \
 	-f .devcontainer/Dockerfile \
-	--build-arg ROS_DISTRO=kilted \
+	--build-arg ROS_DISTRO=lyrical \
 	--build-arg USERNAME=ros \
 	--build-arg USER_UID="$(id -u)" \
 	--build-arg USER_GID="$(id -g)" \
@@ -73,7 +73,7 @@ Inside the container, set the workspace variables and install dependencies:
 
 ```bash
 export WORKSPACE_ROOT="$PWD"
-export ROS_INSTALL_PATH=/opt/ros/kilted
+export ROS_INSTALL_PATH=/opt/ros/lyrical
 ./scripts/install-dependencies.bash
 ```
 
