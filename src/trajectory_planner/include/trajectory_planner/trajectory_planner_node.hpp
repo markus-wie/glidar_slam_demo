@@ -27,6 +27,7 @@ private:
   bool m_useSinglePoint = true;
   int m_useSinglePointAtIteration = 1;
   int m_pointAmountForAverage = 3;
+  float m_speed = 1.5f;
   float m_frontAxisOffset = -0.34f;
   float m_backAxisOffset = -0.62f;
   float m_wheelbase = 0.28f;

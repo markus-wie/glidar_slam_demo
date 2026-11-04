@@ -18,10 +18,8 @@
   <depend>ackermann_steering_controller</depend>
   <depend>joint_state_broadcaster</depend>
   <depend>gz_ros2_control</depend>
-  <depend>rqt_robot_monitor</depend>
-  <depend>rqt_runtime_monitor</depend>
-  <depend>rqt_plot</depend>
-  <depend>rqt_controller_manager</depend>
+  <depend>controller_manager</depend>
+  <depend>controller_manager_msgs</depend>
   <depend>twist_mux</depend>
   <depend>diagnostic_updater</depend>
   <depend>robot_localization</depend>

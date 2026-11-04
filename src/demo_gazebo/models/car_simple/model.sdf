@@ -348,7 +348,7 @@
 
           <clip>
             <near>0.05</near>
-            <far>100</far>
+            <far>12</far>
           </clip>
 
           <distortion>
@@ -360,12 +360,12 @@
             <center>0.5 0.5</center>
           </distortion>
 
-            <!-- As per specification, the depth error is <2% for distances below 3.5m. It is assumed that any depth measurements taken are below 3.5m -->
-          <noise>
+          <!-- As per specification, the depth error is <2% for distances below 3.5m. It is assumed that any depth measurements taken are below 3.5m -->
+          <!-- <noise>
             <type>gaussian</type>
             <mean>0.0</mean>
             <stddev>0.03</stddev>
-          </noise>
+          </noise> -->
         </camera>
         <always_on>1</always_on>
         <update_rate>30</update_rate>
@@ -879,8 +879,7 @@
       <!-- Needed to get the exact position of the vehicle in the simulation. Used for evaluation of localization or similar. -->
       <use_pose_vector_msg>true</use_pose_vector_msg>
       <publish_model_pose>true</publish_model_pose>
-      <static_publisher>true</static_publisher>
-      <static_update_frequency>1</static_update_frequency>
+      <static_publisher>false</static_publisher>
     </plugin>
 
   </model>

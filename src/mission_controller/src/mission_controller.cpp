@@ -1,3 +1,4 @@
+#include <chrono>
 #include <string>
 #include <vector>
 
@@ -22,6 +23,11 @@ public:
     m_param_subscriber = this->add_on_set_parameters_callback(
       std::bind(&MissionControllerNode::parameterChangeCallback, this, std::placeholders::_1));
 
+    // Republish the state so a planner that starts later, or a startup value, still takes effect.
+    m_publishTimer = this->create_wall_timer(std::chrono::seconds(1), [this]() {
+      m_toggleRacingPublisher->publish(std_msgs::msg::Bool().set__data(m_is_racing));
+    });
+
     RCLCPP_INFO(
       this->get_logger(),
       "Mission Controller initialized. Waiting for parameter changes via rqt...");
@@ -33,6 +39,7 @@ private:
   rclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr m_param_subscriber;
 
   rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr m_toggleRacingPublisher;
+  rclcpp::TimerBase::SharedPtr m_publishTimer;
 
   rcl_interfaces::msg::SetParametersResult parameterChangeCallback(
     const std::vector<rclcpp::Parameter> & parameters)

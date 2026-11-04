@@ -3,7 +3,9 @@ import os
 from launch import LaunchDescription
 from launch.substitutions import LaunchConfiguration
 from launch.actions import TimerAction
+from launch.conditions import IfCondition
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
 from ament_index_python.packages import get_package_share_directory
 from launch.actions import (
     IncludeLaunchDescription,
@@ -57,6 +59,25 @@ def generate_launch_description():
         description="Course model (course_complex_corridor|course_long|course_small|course_short_complex_corridor)",
     )
 
+    camera_pitch_offset_arg = DeclareLaunchArgument(
+        "camera_pitch_offset_deg",
+        default_value="0.0",
+        description="Pitch offset in degrees added to the base_link -> camera transform "
+        "of the robot description only (positive = pitch down). The simulated camera is unchanged.",
+    )
+
+    gui_arg = DeclareLaunchArgument(
+        "gui",
+        default_value="true",
+        description="Start the Gazebo GUI, RViz and RQT",
+    )
+
+    racing_arg = DeclareLaunchArgument(
+        "racing",
+        default_value="false",
+        description="Enable lane following at startup (mission.racing)",
+    )
+
     log_level = LaunchConfiguration("log_level")
 
     container = ComposableNodeContainer(
@@ -85,6 +106,7 @@ def generate_launch_description():
         package="rviz2",
         executable="rviz2",
         output="screen",
+        condition=IfCondition(LaunchConfiguration("gui")),
         arguments=["-d", os.path.join(bringup_dir, "config", "demo.rviz")],
         parameters=[{"use_sim_time": use_sim_time}],
     )
@@ -94,6 +116,7 @@ def generate_launch_description():
         package="rqt_gui",
         executable="rqt_gui",
         output="screen",
+        condition=IfCondition(LaunchConfiguration("gui")),
         arguments=[
             "--clear-config",
             "--perspective-file",
@@ -157,6 +180,13 @@ def generate_launch_description():
         executable="mission_controller",
         name="mission_controller",
         output="screen",
+        parameters=[
+            {
+                "mission.racing": ParameterValue(
+                    LaunchConfiguration("racing"), value_type=bool
+                )
+            }
+        ],
     )
     image_processing_launch_file = os.path.join(
         image_processing_dir, "launch", "image_processing_launch.py"
@@ -177,6 +207,9 @@ def generate_launch_description():
             scenario_arg,
             car_type_arg,
             course_type_arg,
+            camera_pitch_offset_arg,
+            gui_arg,
+            racing_arg,
             container,
             mission_controller,
             IncludeLaunchDescription(

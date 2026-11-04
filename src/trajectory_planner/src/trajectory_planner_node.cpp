@@ -65,6 +65,7 @@ TrajectoryPlanner::TrajectoryPlanner(const rclcpp::NodeOptions & options)
   m_useSinglePoint = this->declare_parameter("use_single_point", true);
   m_useSinglePointAtIteration = this->declare_parameter("use_single_point_at_iteration", 1);
   m_pointAmountForAverage = this->declare_parameter("point_amount_for_average", 3);
+  m_speed = this->declare_parameter("speed", 1.5);
   m_frontAxisOffset = this->declare_parameter("vehicle.front_axis_offset", -0.34);
   m_backAxisOffset = this->declare_parameter("vehicle.back_axis_offset", -0.62);
 
@@ -98,16 +99,14 @@ void TrajectoryPlanner::lanePointsCallback(const demo_msgs::msg::LanePoints & ms
 
   steeringAngle *= m_steeringAngleFactor;
 
-  constexpr float speed = 1.5;
-
   float steering_angle_rad = steeringAngle * (M_PIf / 180.0f);
-  float angular_velocity = (speed * std::tan(steering_angle_rad)) / m_wheelbase;
+  float angular_velocity = (m_speed * std::tan(steering_angle_rad)) / m_wheelbase;
 
   geometry_msgs::msg::TwistStamped twist_msg;
   twist_msg.header.stamp = this->now();
   twist_msg.header.frame_id = "base_link";
   twist_msg.twist.angular.z = angular_velocity;
-  twist_msg.twist.linear.x = speed;
+  twist_msg.twist.linear.x = m_speed;
 
   m_cmd_vel_pub->publish(twist_msg);
 }
@@ -200,6 +199,10 @@ rcl_interfaces::msg::SetParametersResult TrajectoryPlanner::parametersCallback(
       parameter.get_name() == "point_amount_for_average" &&
       parameter.get_type() == rclcpp::ParameterType::PARAMETER_INTEGER) {
       m_pointAmountForAverage = static_cast<int>(parameter.as_int());
+    } else if (
+      parameter.get_name() == "speed" &&
+      parameter.get_type() == rclcpp::ParameterType::PARAMETER_DOUBLE) {
+      m_speed = static_cast<float>(parameter.as_double());
     } else if (
       parameter.get_name() == "vehicle.front_axis_offset" &&
       parameter.get_type() == rclcpp::ParameterType::PARAMETER_DOUBLE) {

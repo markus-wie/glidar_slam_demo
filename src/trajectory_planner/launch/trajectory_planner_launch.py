@@ -27,6 +27,8 @@ def get_composable_node():
                 "use_single_point_at_iteration": 1,
                 # The amount of points to use for calculating the average point for the steering angle
                 "point_amount_for_average": 3,
+                # Linear speed published by the trajectory planner
+                "speed": 1.5,
                 # Use simulation time
                 "use_sim_time": use_sim_time,
             }

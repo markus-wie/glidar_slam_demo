@@ -5,10 +5,36 @@ from launch.actions import (
     OpaqueFunction,
 )
 from launch.substitutions import LaunchConfiguration
+import math
 import os
+import re
 from ament_index_python.packages import get_package_share_directory
 
 CAR_TYPES = {"car_damped", "car_rigid", "car_simple"}
+
+CAMERA_POSE_PATTERN = re.compile(
+    r'(<link\s+name="camera"\s*>\s*<pose>)([^<]*)(</pose>)'
+)
+
+
+def offset_camera_pitch(robot_desc, pitch_offset_deg):
+    """Add pitch_offset_deg to the pose of the camera link (child of base_link).
+
+    Only the description is changed, the simulated camera in Gazebo stays untouched.
+    The optical frame is defined relative to the camera link and follows automatically.
+    """
+
+    def apply(match):
+        values = match.group(2).split()
+        if len(values) != 6:
+            raise RuntimeError(f"Unexpected camera pose: '{match.group(2)}'")
+        values[4] = repr(float(values[4]) + math.radians(pitch_offset_deg))
+        return f"{match.group(1)}{' '.join(values)}{match.group(3)}"
+
+    robot_desc, count = CAMERA_POSE_PATTERN.subn(apply, robot_desc, count=1)
+    if count != 1:
+        raise RuntimeError("Could not find the camera link pose in the robot description")
+    return robot_desc
 
 
 def launch_control(context, *args, **kwargs):
@@ -31,6 +57,12 @@ def launch_control(context, *args, **kwargs):
 
     with open(desc_file_path, "r") as infp:
         robot_desc = infp.read()
+
+    camera_pitch_offset_deg = float(
+        LaunchConfiguration("camera_pitch_offset_deg").perform(context)
+    )
+    if camera_pitch_offset_deg != 0.0:
+        robot_desc = offset_camera_pitch(robot_desc, camera_pitch_offset_deg)
 
     node_controller_manager = Node(
         package="controller_manager",
@@ -132,11 +164,19 @@ def generate_launch_description():
         description="Car model (car_damped|car_rigid|car_simple)",
     )
 
+    camera_pitch_offset_arg = DeclareLaunchArgument(
+        "camera_pitch_offset_deg",
+        default_value="10.0",
+        description="Pitch offset in degrees added to the base_link -> camera transform "
+        "of the robot description only (positive = pitch down). The simulated camera is unchanged.",
+    )
+
     return LaunchDescription(
         [
             log_level_arg,
             use_sim_time_arg,
             car_type_arg,
+            camera_pitch_offset_arg,
             OpaqueFunction(function=launch_control),
         ]
     )

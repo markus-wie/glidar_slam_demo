@@ -9,6 +9,10 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 ENV ROS_INSTALL_PATH=/opt/ros/$ROS_DISTRO
 
+# upgrade potentially outdated base image
+RUN apt-get update && apt-get upgrade -y \
+    && rm -rf /var/lib/apt/lists/*
+
 # Install essential development tools, compilers, and ROS 2 build dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     bash-completion \

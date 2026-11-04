@@ -9,6 +9,7 @@ from launch.actions import (
     OpaqueFunction,
 )
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.conditions import IfCondition
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 from ros_gz_bridge.actions import RosGzBridge
@@ -51,6 +52,7 @@ def launch_gazebo(context, *args, **kwargs):
         PythonLaunchDescriptionSource(
             os.path.join(pkg_ros_gz_sim, "launch", "gz_sim.launch.py")
         ),
+        condition=IfCondition(LaunchConfiguration("gui")),
         launch_arguments={
             "gz_args": [
                 "-r -g -v 4",
@@ -106,6 +108,11 @@ def generate_launch_description():
                 "container_name",
                 default_value="ros_gz_container",
                 description="Name of the component container the Gazebo server and bridge load into",
+            ),
+            DeclareLaunchArgument(
+                "gui",
+                default_value="true",
+                description="Start the Gazebo GUI",
             ),
             OpaqueFunction(function=launch_gazebo),
         ]

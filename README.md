@@ -104,6 +104,8 @@ Or use the wrapper, whose positional arguments are `car_type` followed by `cours
 ./scripts/launch.bash car_simple course_small
 ```
 
+To stress test the SLAM system with a wrong camera extrinsic, add `camera_pitch_offset_deg:=<degrees>` (default `0.0`, positive = pitch down). It is added to the `base_link` -> `camera` transform of the robot description (TF) only; the simulated camera in Gazebo is not changed.
+
 There should be three windows open: Gazebo, rviz2, and rqt.
 
 ## Driving the vehicle
